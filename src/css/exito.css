@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.fondoExito {
+  background-image: url(../img/background6.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+@media only screen and (max-width: 800px) {
+  .fondoExito {
+    background-image: url(../img/backgroundsuccess3.jpg);
+    background-repeat: repeat-y;
+  }
+  .registroListo {
+    background-color: #fff;
+    opacity: 0.9;
+  }
+}
+.registroListo {
+  border: 2px solid rgb(51, 168, 15);
+  border-radius: 10px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  font-family: "Work Sans", sans-serif;
+}

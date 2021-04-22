@@ -1,0 +1,118 @@
+.fondoPantalla {
+  /* The image used */
+  background-image: url("../img/LoginMedico.jpg");
+
+  /* Full height */
+  width: 100vw;
+  height: 100vh;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.loginUsuario {
+  position: absolute;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  width: 300px;
+  top: 15%;
+  left: 10%;
+}
+
+.container2 {
+  background-color: white;
+  border-radius: 15px;
+  position: relative;
+  width: 300px;
+  top: 15%;
+  left: 10%;
+}
+
+.formLogin {
+  padding: 10px 20px;
+  width: 300px;
+}
+
+.headerLogin {
+  text-align: center;
+}
+
+.loginButton {
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.modalLogin-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 2px 2px;
+  width: 30%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modalTitle {
+  font-weight: bold;
+}
+
+@media (min-width: 300px) {
+  .container2 {
+    top: 20%;
+    left: 9.5%;
+  }
+  .modalLogin-content {
+    margin: 60% auto; /* 15% from the top and centered */
+    width: 65%;
+  }
+}
+
+@media (min-width: 400px) {
+  .container2 {
+    top: 20%;
+    left: 14%;
+  }
+}
+
+@media (min-width: 700px) {
+  .container2 {
+    top: 20%;
+    left: 30%;
+  }
+  .modalLogin-content {
+    margin: 35% auto; /* 15% from the top and centered */
+    width: 50%;
+  }
+}
+
+@media (min-width: 900px) {
+  .container2 {
+    top: 15%;
+    left: 10%;
+  }
+
+  .modalLogin-content {
+    margin: 15% auto; /* 15% from the top and centered */
+    width: 30%;
+  }
+}

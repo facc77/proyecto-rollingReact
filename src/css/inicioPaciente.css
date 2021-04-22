@@ -1,0 +1,221 @@
+:root {
+  --primary: #111b54;
+  --light: #ffffff;
+  --grey: #efefef;
+}
+
+body {
+  overflow: hidden;
+  font-family: "Muli", sans-serif;
+  font-weight: 300;
+  color: var(--primary);
+  background-color: #efefef;
+}
+
+/* .inicioPaciente {
+  overflow: hidden;
+  height: 100%;
+  font-family: "Muli", sans-serif;
+  font-weight: 300;
+  color: var(--primary);
+  background-color: #efefef;
+} */
+
+a:hover {
+  text-decoration: none;
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.bg-light {
+  background-color: var(--light) !important;
+}
+
+.bg-grey {
+  background-color: var(--grey) !important;
+}
+
+.bg-mix {
+  background: linear-gradient(180deg, var(--light) 50%, var(--grey) 0);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border: 0;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary);
+}
+
+#sidebar-container {
+  min-height: 100vh;
+}
+
+#sidebar-container .logo {
+  padding: 0.875rem 1.25rem;
+}
+
+#sidebar-container .menu {
+  width: 18rem;
+}
+
+#content {
+  overflow-y: auto;
+  height: 100vh;
+  padding-bottom: 5rem;
+}
+
+.avatar {
+  max-width: 35px;
+}
+
+.btn-search {
+  right: 0;
+}
+
+.stat {
+  border-right: 1px solid var(--grey);
+}
+
+.fila2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fila2Tabla {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6rem;
+}
+
+.fila1 {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  margin-top: 6rem;
+}
+
+.tablaContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+.tabla {
+  width: 30%;
+  justify-content: center;
+  display: flex;
+  margin-top: 30px;
+}
+
+.tabla tr:hover {
+  background-color: #ddd;
+}
+
+.tabla td,
+.tabla th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.tabla th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4caf50;
+  color: white;
+}
+
+@media (min-height: 1000px) {
+  #table1 {
+    top: 200px;
+  }
+  .fondo {
+    height: 1024px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .fila1 {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  #sidebar-container {
+    display: none;
+  }
+  .stat {
+    border: 0;
+  }
+  .menuHamburguesaAdmin a {
+    color: #111b54;
+  }
+
+  .menuHamburguesa {
+    background-color: #111b54;
+    color: white;
+  }
+  .dropdown-item {
+    color: white;
+  }
+
+  .fila1 {
+    width: 60%;
+  }
+  .botonSearch {
+    top: 2px;
+  }
+  .botonSearch2 {
+    top: 0.5px;
+  }
+}
+
+@media (max-width: 420px) {
+  .fila1 {
+    width: 80%;
+  }
+}
+
+@media (max-width: 320px) {
+  #sidebar-container {
+    display: none;
+  }
+  .stat {
+    border: 0;
+  }
+
+  .menuHamburguesa {
+    background-color: #111b54;
+  }
+  .dropdown-item {
+    color: white;
+  }
+
+  .fila1 {
+    width: 80%;
+  }
+  .botonSearch {
+    top: 2px;
+  }
+  .botonSearch2 {
+    top: 0.5px;
+  }
+}
+
+@media (max-height: 600px) {
+  .form-group {
+    margin-top: 3px;
+    margin-bottom: 5px;
+  }
+  .form-group1 {
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}

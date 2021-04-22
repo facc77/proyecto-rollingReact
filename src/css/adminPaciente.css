@@ -1,0 +1,79 @@
+.section {
+  background-color: white;
+}
+
+.container {
+  margin-top: 8px;
+}
+
+.fondo {
+  height: 500px;
+  background-color: #efefef;
+}
+
+.tablaContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+.tablaAdmin {
+  justify-content: center;
+  display: flex;
+  margin-top: 30px;
+}
+
+.tablaAdmin tr:hover {
+  background-color: #ddd;
+}
+
+.tablaAdmin td,
+.tablaAdmin th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.tablaAdmin th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4caf50;
+  color: white;
+}
+
+@media (max-width: 420px) {
+  .tablaAdmin {
+    overflow-y: auto;
+    max-height: 250px;
+    width: 320px;
+  }
+  .tablaAdmin table td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    font-size: 14px;
+    text-align: center;
+    top: 0;
+    z-index: 2;
+  }
+  .tablaAdmin table th {
+    border: 1px solid #ddd;
+    padding: 6px;
+    font-size: 14px;
+    text-align: center;
+  }
+  .fondo {
+    height: 600px;
+  }
+}
+
+@media (max-width: 320px) {
+  .tabla {
+    width: 80%;
+  }
+  .tablaTurnoMedico {
+    width: 80%;
+  }
+  .tablaAdminMedico {
+    width: 80%;
+  }
+}
