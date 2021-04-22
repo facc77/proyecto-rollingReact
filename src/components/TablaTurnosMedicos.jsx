@@ -10,7 +10,7 @@ export default function TablaTurnos() {
 
   const fetchData = useCallback(async () => {
     axios
-      .get(`http://localhost:4000/api/turnos`)
+      .get(`https://proyecto-rolling.herokuapp.com/turnos`)
       .then((res) => {
         const turnos = res.data.filter(function (turno) {
           if (turno.medico === usuarioLogueado) {
@@ -49,7 +49,7 @@ export default function TablaTurnos() {
   const handleClick = async (id) => {
     console.log(id);
     const turnoSeleccionado = await axios.get(
-      `http://localhost:4000/api/turnos/` + id
+      `https://proyecto-rolling.herokuapp.com/turnos/` + id
     );
     let aviso = `turno del paciente ${turnoSeleccionado.data.paciente} ,con el motivo de consulta: ${turnoSeleccionado.data.motivoConsulta}`;
     handleOpenModal(aviso);

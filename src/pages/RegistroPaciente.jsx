@@ -23,7 +23,9 @@ export default function RegistroPaciente() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get("http://localhost:4000/api/pacientes");
+      const res = await axios.get(
+        "https://proyecto-rolling.herokuapp.com/pacientes"
+      );
       setUsuarios(res.data);
     };
     fetchData();
@@ -117,7 +119,10 @@ export default function RegistroPaciente() {
       contrasena: state.form.contrasena,
       permiso: "denegado",
     };
-    await axios.post("http://localhost:4000/api/pacientes", newPaciente);
+    await axios.post(
+      "https://proyecto-rolling.herokuapp.com/pacientes",
+      newPaciente
+    );
     history.push("/exito/registro");
   };
 

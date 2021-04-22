@@ -14,7 +14,7 @@ function ModalMedico(props) {
   useEffect(() => {
     const fetchData = async () => {
       axios
-        .get(`http://localhost:4000/api/medicos/` + props.idMedico)
+        .get(`https://proyecto-rolling.herokuapp.com/medicos/` + props.idMedico)
         .then((res) => {
           setMedicoSeleccionado(res.data);
         })

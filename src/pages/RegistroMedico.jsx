@@ -29,7 +29,10 @@ export default function RegistroUsuario() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get("http://localhost:4000/api/medicos");
+      //const res = await axios.get("http://localhost:4000/api/medicos");
+      const res = await axios.get(
+        "https://proyecto-rolling.herokuapp.com/medicos"
+      );
       setUsuarios(res.data);
     };
     fetchData();
@@ -169,7 +172,11 @@ export default function RegistroUsuario() {
       horario: state.form.horario,
       contrasena2: state.form.contrasena2,
     };
-    await axios.post("http://localhost:4000/api/medicos", newMedico);
+    //await axios.post("http://localhost:4000/api/medicos", newMedico);
+    await axios.post(
+      "https://proyecto-rolling.herokuapp.com/medicos",
+      newMedico
+    );
     console.log(newMedico);
     history.push("/exito/registro");
   };

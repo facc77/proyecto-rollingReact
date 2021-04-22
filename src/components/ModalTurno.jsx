@@ -29,7 +29,9 @@ export default function ModalTurno(props) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get("http://localhost:4000/api/turnos");
+      const res = await axios.get(
+        "https://proyecto-rolling.herokuapp.com/turnos"
+      );
       setTurnosAlmacenados(res.data);
     };
     fetchData();

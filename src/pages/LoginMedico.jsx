@@ -17,7 +17,9 @@ export default function LoginUsuario() {
   const [mensajeModal, setMensajeModal] = useState("");
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get("http://localhost:4000/api/medicos");
+      const res = await axios.get(
+        "https://proyecto-rolling.herokuapp.com/medicos"
+      );
       setUsuario({
         usuarios: res.data,
       });

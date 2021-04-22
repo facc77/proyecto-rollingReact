@@ -6,7 +6,7 @@ export default function Tabla(props) {
 
   const fetchData = useCallback(async () => {
     axios
-      .get(`http://localhost:4000/api/${props.endpoint}`)
+      .get(`https://proyecto-rolling.herokuapp.com/${props.endpoint}`)
       .then((res) => {
         setUsuarios(res.data);
         console.log(usuarios);
