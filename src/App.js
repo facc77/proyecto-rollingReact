@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import "./components/FontawesomeIcons/index.js";
+//import "./components/FontawesomeIcons/index.js";
 import Home from "./pages/Home";
 import LoginPaciente from "./pages/LoginPaciente";
 import LoginMedico from "./pages/LoginMedico";
