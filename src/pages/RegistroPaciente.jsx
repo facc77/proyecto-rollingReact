@@ -53,6 +53,7 @@ export default function RegistroPaciente() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(state.form);
     if (state.form.usuario === "") {
       setMensajeError1("El campo no puede quedar vacio");
       handleError1("usuario");
@@ -73,7 +74,8 @@ export default function RegistroPaciente() {
     }
 
     function isEmail(email) {
-      return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(true);
+      let re = /\S+@\S+\.\S+/;
+      return re.test(email);
     }
 
     if (state.form.contrasena2 === "") {
