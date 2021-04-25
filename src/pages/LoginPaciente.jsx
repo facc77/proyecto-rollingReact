@@ -19,7 +19,7 @@ export default function LoginPaciente() {
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios.get(
-        "https://proyecto-rolling.herokuapp.com/pacientes"
+        "https://proyecto-rolling.herokuapp.com/api/pacientes"
       );
       setUsuario({
         usuarios: res.data,

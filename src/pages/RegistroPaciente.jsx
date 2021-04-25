@@ -108,6 +108,7 @@ export default function RegistroPaciente() {
       state.form.contrasena !== "" &&
       state.form.contrasena === state.form.contrasena2
     ) {
+      console.log("almacenado");
       almacenar();
     }
   };
