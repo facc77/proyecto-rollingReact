@@ -120,7 +120,7 @@ export default function RegistroPaciente() {
       permiso: "denegado",
     };
     await axios.post(
-      "https://proyecto-rolling.herokuapp.com/pacientes",
+      "https://proyecto-rolling.herokuapp.com/api/pacientes",
       newPaciente
     );
     history.push("/exito/registro");
