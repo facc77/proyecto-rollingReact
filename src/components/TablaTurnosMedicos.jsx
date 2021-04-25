@@ -10,7 +10,7 @@ export default function TablaTurnos() {
 
   const fetchData = useCallback(async () => {
     axios
-      .get(`https://proyecto-rolling.herokuapp.com/turnos`)
+      .get(`https://proyecto-rolling.herokuapp.com/api/turnos`)
       .then((res) => {
         const turnos = res.data.filter(function (turno) {
           if (turno.medico === usuarioLogueado) {

@@ -31,7 +31,7 @@ export default function RegistroUsuario() {
     const fetchData = async () => {
       //const res = await axios.get("http://localhost:4000/api/medicos");
       const res = await axios.get(
-        "https://proyecto-rolling.herokuapp.com/medicos"
+        "https://proyecto-rolling.herokuapp.com/api/medicos"
       );
       setUsuarios(res.data);
     };

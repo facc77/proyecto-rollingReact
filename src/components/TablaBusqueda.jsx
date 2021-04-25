@@ -7,7 +7,7 @@ export default function Tabla(props) {
 
   const fetchData = useCallback(async () => {
     axios
-      .get(`https://proyecto-rolling.herokuapp.com/medicos`)
+      .get(`https://proyecto-rolling.herokuapp.com/api/medicos`)
       .then((res) => {
         const busquedaUsuario = res.data.filter(function (user) {
           if (user.disciplina === busqueda && user.permiso === "aceptado") {

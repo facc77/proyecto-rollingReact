@@ -104,11 +104,10 @@ export default function RegistroPaciente() {
       checkUserName() &&
       state.form.usuario !== "" &&
       state.form.email !== "" &&
-      !isEmail(state.form.email) &&
+      isEmail(state.form.email) &&
       state.form.contrasena !== "" &&
       state.form.contrasena === state.form.contrasena2
     ) {
-      console.log("almacenado");
       almacenar();
     }
   };

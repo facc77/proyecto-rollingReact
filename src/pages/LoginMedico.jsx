@@ -18,7 +18,7 @@ export default function LoginUsuario() {
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios.get(
-        "https://proyecto-rolling.herokuapp.com/medicos"
+        "https://proyecto-rolling.herokuapp.com/api/medicos"
       );
       setUsuario({
         usuarios: res.data,
