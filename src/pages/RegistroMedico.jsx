@@ -174,7 +174,7 @@ export default function RegistroUsuario() {
     };
     //await axios.post("http://localhost:4000/api/medicos", newMedico);
     await axios.post(
-      "https://proyecto-rolling.herokuapp.com/medicos",
+      "https://proyecto-rolling.herokuapp.com/api/medicos",
       newMedico
     );
     console.log(newMedico);

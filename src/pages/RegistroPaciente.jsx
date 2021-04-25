@@ -24,7 +24,7 @@ export default function RegistroPaciente() {
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios.get(
-        "https://proyecto-rolling.herokuapp.com/pacientes"
+        "https://proyecto-rolling.herokuapp.com/api/pacientes"
       );
       setUsuarios(res.data);
     };
@@ -73,9 +73,7 @@ export default function RegistroPaciente() {
     }
 
     function isEmail(email) {
-      return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-        true
-      );
+      return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(true);
     }
 
     if (state.form.contrasena2 === "") {
