@@ -107,7 +107,10 @@ export default function ModalTurno(props) {
       medico: state.form.medico,
       especialidad: state.form.especialidad,
     };
-    await axios.post("http://localhost:4000/api/turnos", newTurno);
+    await axios.post(
+      "https://proyecto-rolling.herokuapp.com/api/turnos",
+      newTurno
+    );
     console.log(newTurno);
     history.push("/exito/turnos");
   };

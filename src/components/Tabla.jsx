@@ -43,8 +43,13 @@ export default function Tabla(props) {
       };
       console.log(usuarioSeleccionado);
       console.log(newPaciente);
-      await axios.put("http://localhost:4000/api/pacientes/" + id, newPaciente);
-      const res = await axios.get("http://localhost:4000/api/pacientes");
+      await axios.put(
+        "https://proyecto-rolling.herokuapp.com/api/pacientes/" + id,
+        newPaciente
+      );
+      const res = await axios.get(
+        "https://proyecto-rolling.herokuapp.com/api/pacientes"
+      );
       setUsuarios(res.data);
     } else {
       const newMedico = {
@@ -58,8 +63,13 @@ export default function Tabla(props) {
         disciplina: usuarioSeleccionado.disciplina,
         horario: usuarioSeleccionado.horario,
       };
-      await axios.put("http://localhost:4000/api/medicos/" + id, newMedico);
-      const res = await axios.get("http://localhost:4000/api/medicos");
+      await axios.put(
+        "https://proyecto-rolling.herokuapp.com/api/medicos/" + id,
+        newMedico
+      );
+      const res = await axios.get(
+        "https://proyecto-rolling.herokuapp.com/api/medicos"
+      );
       setUsuarios(res.data);
     }
   };
