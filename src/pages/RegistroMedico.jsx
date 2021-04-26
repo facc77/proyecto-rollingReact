@@ -95,9 +95,8 @@ export default function RegistroUsuario() {
     }
 
     function isEmail(email) {
-      return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-        true
-      );
+      let re = /\S+@\S+\.\S+/;
+      return re.test(email);
     }
 
     if (state.form.contrasena2 === "") {
@@ -151,7 +150,7 @@ export default function RegistroUsuario() {
       checkUserName() &&
       state.form.usuario !== "" &&
       state.form.email !== "" &&
-      !isEmail(state.form.email) &&
+      isEmail(state.form.email) &&
       state.form.contrasena !== "" &&
       state.form.contrasena === state.form.contrasena2
     ) {
