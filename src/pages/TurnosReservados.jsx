@@ -32,67 +32,10 @@ export default function BusquedaPaciente(props) {
         </div>
 
         <div className="w-100">
-          <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-            <div className="container">
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-icon"></span>
-              </button>
-
-              <div
-                className="collapse navbar-collapse"
-                id="navbarSupportedContent"
-              >
-                <form className="form-inline position-relative d-inline-block my-2">
-                  <input
-                    className="form-control"
-                    type="search"
-                    id="busquedaInput"
-                    placeholder="Buscar"
-                    aria-label="Buscar"
-                  />
-                  <button
-                    className="btn position-absolute btn-search botonSearch"
-                    type="submit"
-                  >
-                    <i className="icon ion-md-search"></i>
-                  </button>
-                </form>
-                <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-                  <li className="nav-item dropdown" id="navbarDropdown1">
-                    <div
-                      className="dropdown-menu dropdown-menu-right menuHamburguesa"
-                      aria-labelledby="navbarDropdown"
-                    >
-                      <a className="dropdown-item" href="busquedaPaciente.html">
-                        Inicio
-                      </a>
-                      <a className="dropdown-item" href="busqueda.html">
-                        Busqueda
-                      </a>
-                      <a
-                        className="dropdown-item"
-                        href="TurnosConfirmados.html"
-                      >
-                        Turnos Confirmados
-                      </a>
-                      <div className="dropdown-divider"></div>
-                      <Link to="/" className="dropdown-item">
-                        Cerrar Sesion
-                      </Link>
-                    </div>
-                  </li>
-                  <button className="btn btn-primary">cerrar sesion</button>
-                </ul>
-              </div>
-            </div>
+          <nav className="navbar-light bg-light border-bottom nabvarAlign">
+            <Link to="/">
+              <button className="btn btn-secondary homeButton">salir</button>
+            </Link>
           </nav>
 
           <div id="content" className="bg-grey w-100 fila3">

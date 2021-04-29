@@ -33,27 +33,10 @@ export default function InicioPacientes() {
         </div>
 
         <div className="w-100">
-          {/*           <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom nabvarAlign">
-           */}{" "}
           <nav className="navbar-light bg-light border-bottom nabvarAlign">
             <Link to="/">
               <button className="btn btn-secondary homeButton">salir</button>
             </Link>
-            {/*               <form className="searchBar my-1">
-                <input
-                  className="form-control mr-2"
-                  type="search"
-                  id="busquedaInput"
-                  placeholder="Buscar"
-                  aria-label="Buscar"
-                />
-                <button
-                  className="btn btn-secondary btn-search botonSearch"
-                  type="submit"
-                >
-                  buscar
-                </button>
-              </form> */}
           </nav>
           <div id="content" className="bg-grey w-100 fila3">
             <section className="bg-light py-3">
