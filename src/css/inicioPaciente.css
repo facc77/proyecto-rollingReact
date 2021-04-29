@@ -25,7 +25,7 @@ a:hover {
   text-decoration: none;
 }
 
-.bg-primary {
+.bg-secondary {
   background-color: var(--primary) !important;
 }
 

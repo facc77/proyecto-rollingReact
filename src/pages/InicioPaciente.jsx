@@ -9,7 +9,7 @@ export default function InicioPacientes(props) {
   return (
     <div className="inicioPaciente">
       <div className="d-flex" id="content-wrapper">
-        <div id="sidebar-container" className="bg-primary">
+        <div id="sidebar-container" className="bg-secondary">
           <div className="logo">
             <h4 className="text-light font-weight-bold mb-0">San Remo</h4>
           </div>
@@ -103,7 +103,7 @@ export default function InicioPacientes(props) {
                   </li> */}
                   <Link to="/">
                     {" "}
-                    <button className="btn btn-primary">salir</button>
+                    <button className="btn btn-secondary">salir</button>
                   </Link>{" "}
                 </ul>
               </div>
@@ -121,7 +121,7 @@ export default function InicioPacientes(props) {
                     <p className="lead">Revisa la última información</p>
                   </div>
                   <div className="col-lg-3 col-md-4 d-flex">
-                    <button className="btn btn-primary w-100 align-self-center">
+                    <button className="btn btn-secondary w-100 align-self-center">
                       Descargar reporte
                     </button>
                   </div>
