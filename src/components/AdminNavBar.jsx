@@ -7,6 +7,7 @@ import {
   NavDropdown,
   Button,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Logo from "../img/logo.jpg";
 import "../css/adminNavBar.css";
 
@@ -33,8 +34,15 @@ export default function AdminNavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/adminPaciente">Autorizar Pacientes</Nav.Link>
-            <Nav.Link href="/adminMedico">Autorizar Medicos</Nav.Link>
+            <Link to="/adminPaciente" className="adminRedirect">
+              {/* <Nav.Link to="/adminPaciente"> */}Autorizar Pacientes
+              {/* </Nav.Link> */}
+            </Link>
+            <Link to="/adminMedico" className="adminRedirect">
+              {/* <Nav.Link to="/adminPaciente"> */}Autorizar Medicos
+              {/* </Nav.Link> */}
+            </Link>
+
             <NavDropdown title="Configuracion" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Mi perfil</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">

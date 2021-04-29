@@ -1,1 +1,12 @@
+a:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+.adminRedirect {
+  display: initial;
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 5px;
+}
 
+Link:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
