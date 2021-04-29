@@ -24,7 +24,14 @@ function ModalMedico(props) {
           alert(err);
         });
     };
-    fetchData();
+    if (props.idMedico !== 0) {
+      try {
+        fetchData();
+      } catch (err) {
+        console.log(`el error es ${err}`);
+      }
+    }
+    //fetchData();
   }, [props.modalIsOpen, props.idMedico]);
 
   const handleOpenModal = () => {
