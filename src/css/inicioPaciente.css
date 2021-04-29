@@ -1,5 +1,5 @@
 :root {
-  --primary: #111b54;
+  --secondary: #111b54;
   --light: #ffffff;
   --grey: #efefef;
 }
@@ -41,7 +41,7 @@ a:hover {
   background: linear-gradient(180deg, var(--light) 50%, var(--grey) 0);
 }
 
-.btn-primary {
+.btn-secondary {
   background-color: var(--primary);
   border: 0;
 }
