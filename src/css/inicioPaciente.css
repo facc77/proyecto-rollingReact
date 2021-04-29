@@ -8,7 +8,8 @@ body {
   overflow: hidden;
   font-family: "Muli", sans-serif;
   font-weight: 300;
-  color: var(--primary);
+  /*   color: var(--primary);
+ */
   background-color: #efefef;
 }
 
