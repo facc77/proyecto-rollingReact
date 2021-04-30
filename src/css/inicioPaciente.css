@@ -24,6 +24,10 @@ body {
   display: flex;
 }
 
+.menuPaciente {
+  display: none;
+}
+
 .homeButton {
   margin-right: 10px;
 }
@@ -195,6 +199,15 @@ a:hover {
 @media (max-width: 420px) {
   .fila1 {
     width: 80%;
+  }
+
+  .nabvarAlign {
+    display: block;
+    text-align: left;
+  }
+  .homeButton {
+    margin-right: 10px;
+    width: 100%;
   }
 }
 

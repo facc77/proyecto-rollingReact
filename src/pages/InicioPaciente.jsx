@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/inicioPaciente.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
 
 import Buscador from "../components/Buscador.jsx";
@@ -33,11 +34,41 @@ export default function InicioPacientes() {
         </div>
 
         <div className="w-100">
-          <nav className="navbar-light bg-light border-bottom nabvarAlign">
+          <nav className="navbar-light bg-light border-bottom nabvarAlign bg-secondary">
+            {/*             <div className="menuPaciente">
+              <Link to="/inicioPaciente" className="d-block  p-1 border-0">
+                Buscar Medicos
+              </Link>
+              <Link to="/turnosReservados" className="d-block  p-1 border-0">
+                Turnos reservados
+              </Link>
+            </div>
             <Link to="/">
               <button className="btn btn-secondary homeButton">salir</button>
-            </Link>
+            </Link> */}
+            <Dropdown>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                San Remo
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Link to="/inicioPaciente">
+                  <Dropdown.Item href="#/action-3">
+                    Buscar medicos{" "}
+                  </Dropdown.Item>
+                </Link>
+                <Link to="/turnosReservados">
+                  <Dropdown.Item href="#/action-3">
+                    Turnos reservados{" "}
+                  </Dropdown.Item>
+                </Link>
+                <Link to="/">
+                  <Dropdown.Item href="#/action-3">Salir </Dropdown.Item>
+                </Link>
+              </Dropdown.Menu>
+            </Dropdown>
           </nav>
+
           <div id="content" className="bg-grey w-100 fila3">
             <section className="bg-light py-3">
               <div className="container">
