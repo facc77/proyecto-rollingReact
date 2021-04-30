@@ -53,17 +53,19 @@ export default function InicioPacientes() {
 
               <Dropdown.Menu>
                 <Link to="/inicioPaciente">
-                  <Dropdown.Item href="#/action-3">
-                    Buscar medicos{" "}
+                  <Dropdown.Item className="dropdownItem" href="#/action-3">
+                    Buscar medicos
                   </Dropdown.Item>
                 </Link>
                 <Link to="/turnosReservados">
-                  <Dropdown.Item href="#/action-3">
-                    Turnos reservados{" "}
+                  <Dropdown.Item className="dropdownItem" href="#/action-3">
+                    Turnos reservados
                   </Dropdown.Item>
                 </Link>
                 <Link to="/">
-                  <Dropdown.Item href="#/action-3">Salir </Dropdown.Item>
+                  <Dropdown.Item className="dropdownItem" href="#/action-3">
+                    Salir{" "}
+                  </Dropdown.Item>
                 </Link>
               </Dropdown.Menu>
             </Dropdown>

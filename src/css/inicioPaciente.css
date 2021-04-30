@@ -40,6 +40,10 @@ body {
   display: none;
 }
 
+.dropdownItem {
+  color: #212529;
+}
+
 /* .inicioPaciente {
   overflow: hidden;
   height: 100%;
