@@ -46,7 +46,7 @@ export default function InicioPacientes() {
             <Link to="/">
               <button className="btn btn-secondary homeButton">salir</button>
             </Link> */}
-            <Dropdown>
+            <Dropdown className="navbarDropdown">
               <Dropdown.Toggle variant="success" id="dropdown-basic">
                 San Remo
               </Dropdown.Toggle>
@@ -67,6 +67,9 @@ export default function InicioPacientes() {
                 </Link>
               </Dropdown.Menu>
             </Dropdown>
+            <Link to="/">
+              <button className="btn-secondary homeButton">salir</button>
+            </Link>
           </nav>
 
           <div id="content" className="bg-grey w-100 fila3">

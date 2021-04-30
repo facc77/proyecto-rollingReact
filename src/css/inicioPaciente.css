@@ -30,6 +30,14 @@ body {
 
 .homeButton {
   margin-right: 10px;
+  padding: 7px;
+  border-radius: 6px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.navbarDropdown {
+  display: none;
 }
 
 /* .inicioPaciente {
@@ -203,11 +211,13 @@ a:hover {
 
   .nabvarAlign {
     display: block;
-    text-align: left;
+    text-align: right;
+  }
+  .navbarDropdown {
+    display: block;
   }
   .homeButton {
-    margin-right: 10px;
-    width: 100%;
+    display: none;
   }
 }
 
