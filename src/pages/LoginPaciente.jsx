@@ -109,7 +109,9 @@ export default function LoginPaciente() {
                 name="contrasena"
               />
             </div>
-            <Link to="/registroPaciente">No estas registrado?</Link>
+            <Link className="linkRegister" to="/registroPaciente">
+              No estas registrado?
+            </Link>
             <button className="btn btn-info loginButton">Enviar</button>
           </form>
         </div>

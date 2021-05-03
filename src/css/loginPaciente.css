@@ -57,6 +57,10 @@
   width: 30%;
 }
 
+.linkRegister:hover {
+  color: #007bff;
+}
+
 /* The Close Button */
 .close {
   color: #aaa;
