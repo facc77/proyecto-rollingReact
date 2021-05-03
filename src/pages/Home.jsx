@@ -63,40 +63,40 @@ export default function Home() {
       <div className="row homeFooter text-center  pt-4">
         <div className="col-md-4">
           <>
-            <h6 className="footer-text text-uppercase font-weight-blod text-white">
+            <h6 className="footer-text text-size text-uppercase font-weight-blod text-white">
               Profesionales de la salud
             </h6>
             <hr className="hrFooter bg-primary mb-4 d-inline-block" />
-            <p className="mt-2 text-white">
+            <p className="mt-2 text-white text-size">
               Medicina de alta complejidad. Todas las especialidades. Atención
               las 24 horas. Guardias Médicas.
             </p>
           </>
         </div>
         <div className="col-md-4">
-          <h6 className="text-uppercase font-weight-blod text-white">
+          <h6 className="text-uppercase text-size font-weight-blod text-white">
             Selecciona opciones
           </h6>
           <>
             <hr className="hrFooter bg-primary mb-4 mt-0 d-inline-block mx-auto" />
           </>
           <ul className="list-unstyled">
-            <li className="my-2 text-white">
+            <li className="my-2 text-size text-white">
               <a href="../html/home.html">Home</a>
             </li>
-            <li className="my-2 text-white">
+            <li className="my-2 text-size text-white">
               <a href="../html/pagina404.html">About</a>
             </li>
-            <li className="my-2 text-white">
+            <li className="my-2 text-size text-white">
               <a href="../html/home.html">Services</a>
             </li>
-            <li className="my-2 text-white">
+            <li className="my-2 text-size text-white">
               <a href="https://rollingcodeschool.com/">Contact</a>
             </li>
           </ul>
         </div>
         <div className="col-md-4">
-          <h6 className="text-uppercase font-weight-blod text-white">
+          <h6 className="text-uppercase text-size font-weight-blod text-white">
             Nuestros contactos
           </h6>
           <>
@@ -104,21 +104,21 @@ export default function Home() {
             <hr className="hrFooter bg-primary mb-4 mt-0 d-inline-block " />
           </>
           <ul className="list-unstyled">
-            <li className="my-2 text-white">
+            <li className="my-2 text-size text-white">
               <i className="fas fa-home  mr-2"></i> 25 de mayo 500
             </li>
-            <li className="my-2 text-white">
+            <li className="my-2 text-size text-white">
               <i className="fas fa-envelope-square mr-2"></i>hola@gmail.com
             </li>
-            <li className="my-2 text-white">
+            <li className="my-2 text-size text-white">
               <i className="fas fa-phone mr-2"></i>+54 9 381 6333333
             </li>
-            <li className="my-2 text-white">
+            <li className="my-2 text-size text-white">
               <i className="fas fa-print"></i>+3333333
             </li>
           </ul>
         </div>
-        <div className="bottomFooter text-center  text-white">
+        <div className="bottomFooter text-center text-size  text-white">
           <a href="../html/home.html" target="_blank">
             Acerca del grupo de profesionales
           </a>

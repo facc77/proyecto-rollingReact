@@ -91,6 +91,12 @@
   width: 100%;
 }
 
+@media only screen and (min-width: 650px) and (min-width: 900px) {
+  .homeFooter {
+    width: 101.9%;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .retratoMedico {
     width: 100%;
@@ -123,6 +129,10 @@
   .barraSeparadora {
     width: 95%;
     margin-left: 10px;
+  }
+
+  .text-size {
+    font-size: 15px;
   }
 }
 @media screen and (max-width: 1250px) and (min-width: 700px) {
