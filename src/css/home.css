@@ -91,7 +91,7 @@
   width: 100%;
 }
 
-@media only screen and (min-width: 650px) and (min-width: 900px) {
+@media only screen and (min-width: 650px) and (max-width: 900px) {
   .homeFooter {
     width: 101.9%;
   }
