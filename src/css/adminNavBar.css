@@ -5,6 +5,7 @@ a:hover {
   display: initial;
   color: rgba(255, 255, 255, 0.5);
   margin-left: 5px;
+  padding-top: 7.5px;
 }
 
 Link:hover {

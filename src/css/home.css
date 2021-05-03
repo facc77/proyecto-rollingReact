@@ -6,6 +6,12 @@
 .homePage {
   overflow-y: scroll;
   height: 100vh;
+  background-color: white;
+}
+
+.barraContainer {
+  display: flex;
+  justify-content: center;
 }
 
 .jumbotron {

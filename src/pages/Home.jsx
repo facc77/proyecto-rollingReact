@@ -26,7 +26,9 @@ export default function Home() {
           </Link>
         </div>
       </Jumbotron>
-      <div className="container barraSeparadora"></div>
+      <div className="container barraContainer">
+        <div className="barraSeparadora"></div>
+      </div>
       <div className="m-3">
         <div className="row mt-5 rowRetratoMedico">
           <div className="col-md-6">
