@@ -137,4 +137,8 @@
   .errorContainer {
     position: relative;
   }
+  .containerMedico {
+    position: relative;
+    top: 15%;
+  }
 }

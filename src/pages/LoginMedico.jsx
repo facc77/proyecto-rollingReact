@@ -107,7 +107,9 @@ export default function LoginUsuario() {
                 name="contrasena"
               />
             </div>
-            <Link to="/registroMedico">No estas registrado?</Link>
+            <Link className="linkRegister" to="/registroMedico">
+              No estas registrado?
+            </Link>
             <button className="btn btn-info loginButton">Enviar</button>
           </form>
         </div>

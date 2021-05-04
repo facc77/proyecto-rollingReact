@@ -232,18 +232,17 @@ export default function RegistroUsuario() {
                 </div>
               </div>
               <div className="form-group">
-                <label>Contrasena</label>
+                <label>Email</label>
                 <input
-                  type="password"
-                  placeholder="ingrese contrasena"
+                  type="text"
+                  placeholder="ingrese email"
                   className="form-control"
                   onChange={handleChange}
-                  name="contrasena"
-                  id="contrasena"
+                  name="email"
+                  id="email"
                 />
                 <div className="errorContainer">
-                  {" "}
-                  <small className="mensajeErrorMedico">{mensajeError3}</small>
+                  <small className="mensajeErrorMedico">{mensajeError2}</small>
                 </div>
               </div>
             </div>
@@ -274,18 +273,20 @@ export default function RegistroUsuario() {
                   <option value="tarde">Tarde</option>
                 </select>
               </div>
+
               <div className="form-group">
-                <label>Email</label>
+                <label>Contrasena</label>
                 <input
-                  type="text"
-                  placeholder="ingrese email"
+                  type="password"
+                  placeholder="ingrese contrasena"
                   className="form-control"
                   onChange={handleChange}
-                  name="email"
-                  id="email"
+                  name="contrasena"
+                  id="contrasena"
                 />
                 <div className="errorContainer">
-                  <small className="mensajeErrorMedico">{mensajeError2}</small>
+                  {" "}
+                  <small className="mensajeErrorMedico">{mensajeError3}</small>
                 </div>
               </div>
               <div className="form-group">
