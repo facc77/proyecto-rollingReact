@@ -55,6 +55,14 @@ body {
   color: black;
 }
 
+.searchContainer {
+  width: 250px;
+}
+
+.pacienteDropdown {
+  margin-right: 25px;
+}
+
 /* .inicioPaciente {
   overflow: hidden;
   height: 100%;
