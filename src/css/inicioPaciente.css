@@ -44,6 +44,17 @@ body {
   color: #212529;
 }
 
+.searchButton {
+  left: 200px;
+  background-color: white;
+  border: 0px;
+  padding: 0px;
+}
+
+.searchIcon {
+  color: black;
+}
+
 /* .inicioPaciente {
   overflow: hidden;
   height: 100%;

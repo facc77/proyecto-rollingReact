@@ -7,7 +7,7 @@ export default function AdminPaciente() {
   return (
     <div>
       <AdminNavBar />
-      <section className="pt-2 pb-3  mb-1 ">
+      <section className="pt-2 pb-3  mb-1 adminSection">
         <div className="container">
           <div className="row">
             <div className="col-lg-9 col-md-8">

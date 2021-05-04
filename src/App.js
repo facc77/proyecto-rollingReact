@@ -12,6 +12,8 @@ import InicioPaciente from "./pages/InicioPaciente";
 import InicioMedico from "./pages/InicioMedico";
 import BusquedaPaciente from "./pages/BusquedaPaciente";
 import TurnosReservados from "./pages/TurnosReservados";
+import PruebaPacientes from "./pages/pruebaPacientes";
+
 import Exito from "./pages/Exito";
 import Error from "./pages/Error";
 
@@ -31,6 +33,7 @@ export default function App() {
       <Route exact path="/turnosReservados" component={TurnosReservados} />
       <Route exact path="/Exito/:id" component={Exito} />
       <Route exact path="/error/" component={Error} />
+      <Route exact path="/pruebaPacientes" component={PruebaPacientes} />
     </Router>
   );
 }

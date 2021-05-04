@@ -11,6 +11,10 @@
   background-color: #efefef;
 }
 
+.adminSection {
+  background-color: white;
+}
+
 .tablaContainer {
   display: flex;
   justify-content: center;
