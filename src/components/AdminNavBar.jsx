@@ -13,7 +13,7 @@ import "../css/adminNavBar.css";
 
 export default function AdminNavBar() {
   return (
-    <div>
+    <>
       <Navbar
         collapseOnSelect
         expand="lg"
@@ -35,20 +35,15 @@ export default function AdminNavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <Link to="/adminPaciente" className="adminRedirect">
-              {/* <Nav.Link to="/adminPaciente"> */}Autorizar Pacientes
-              {/* </Nav.Link> */}
+              Autorizar Pacientes
             </Link>
             <Link to="/adminMedico" className="adminRedirect">
-              {/* <Nav.Link to="/adminPaciente"> */}Autorizar Medicos
-              {/* </Nav.Link> */}
+              Autorizar Medicos
             </Link>
 
             <NavDropdown title="Configuracion" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Mi perfil</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Suscripciones
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="/error">Mi perfil</NavDropdown.Item>
+              <NavDropdown.Item href="/error">Configuracion</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/">Cerrar sesion</NavDropdown.Item>
             </NavDropdown>
@@ -59,10 +54,31 @@ export default function AdminNavBar() {
               placeholder="Busqueda"
               className="mr-sm-2 mb-0"
             />
-            <Button variant="outline-light">Buscar</Button>
+            <Link to="/error">
+              <Button variant="outline-light">Buscar</Button>
+            </Link>
           </Form>
         </Navbar.Collapse>
       </Navbar>
-    </div>
+      <section className="pt-2 pb-3  mb-1 adminSection ">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-9 col-md-8">
+              <h1 id="usuarioLogueado" className="font-weight-bold mb-0">
+                Admin
+              </h1>
+              <p className="lead text-muted">Revisa la última información</p>
+            </div>
+            <div className="col-lg-3 col-md-4 d-flex">
+              <Link className="w-100 align-self-center" to="/error">
+                <button className="btn btn-primary align-self-center">
+                  Descargar reporte
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

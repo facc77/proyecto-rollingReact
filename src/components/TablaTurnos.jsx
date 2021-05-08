@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
+import Spinner from "react-bootstrap/Spinner";
 
 export default function TablaTurnos() {
   const [turnosConfirmados, setTurnosConfirmados] = useState([]);
@@ -16,12 +17,12 @@ export default function TablaTurnos() {
           return null;
         });
         setTurnosConfirmados(turnos);
-        console.log(turnosConfirmados);
       })
       .catch((err) => {
+        console.log(err);
         alert(err);
       });
-  }, [turnosConfirmados, usuarioLogueado]);
+  }, [usuarioLogueado]);
 
   useEffect(() => {
     fetchData();
@@ -50,7 +51,7 @@ export default function TablaTurnos() {
   };
 
   return (
-    <table>
+    /*     <table>
       <thead>
         <tr>
           <th>doctor</th>
@@ -59,16 +60,51 @@ export default function TablaTurnos() {
         </tr>
       </thead>
       <tbody>
-        {turnosConfirmados.length > 0
-          ? turnosConfirmados.map((turno) => (
-              <tr key={turno._id} onDoubleClick={() => handleClick(turno._id)}>
-                <td>{turno.medico}</td>
-                <td>{turno.hora}</td>
-                <td>{turno.fecha}</td>
-              </tr>
-            ))
-          : "tabla"}
+        {turnosConfirmados.length > 0 ? (
+          turnosConfirmados.map((turno) => (
+            <tr key={turno._id} onDoubleClick={() => handleClick(turno._id)}>
+              <td>{turno.medico}</td>
+              <td>{turno.hora}</td>
+              <td>{turno.fecha}</td>
+            </tr>
+          ))
+        ) : (
+          <Spinner animation="border" role="status">
+            <span className="sr-only">Cargando...</span>
+          </Spinner>
+        )}
       </tbody>
+    </table> */
+    <table>
+      <thead>
+        <tr>
+          <th>doctor</th>
+          <th>hora</th>
+          <th>fecha</th>
+        </tr>
+      </thead>
+
+      {turnosConfirmados.length > 0 ? (
+        turnosConfirmados.map((turno) => (
+          <tbody>
+            <tr key={turno._id} onDoubleClick={() => handleClick(turno._id)}>
+              <td>{turno.medico}</td>
+              <td>{turno.hora}</td>
+              <td>{turno.fecha}</td>
+            </tr>
+          </tbody>
+        ))
+      ) : (
+        <tbody>
+          <tr key={Math.random()}>
+            <td>
+              <Spinner animation="border" role="status">
+                <span className="sr-only">Cargando...</span>
+              </Spinner>
+            </td>
+          </tr>
+        </tbody>
+      )}
     </table>
   );
 }

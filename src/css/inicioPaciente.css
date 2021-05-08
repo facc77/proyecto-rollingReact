@@ -63,6 +63,16 @@ body {
   margin-right: 25px;
 }
 
+.pacienteSidebar {
+  background-color: #111b54;
+}
+
+.botonSidebar {
+  background-color: #111b54 !important;
+  border-color: #111b54 !important;
+  color: white !important;
+}
+
 /* .inicioPaciente {
   overflow: hidden;
   height: 100%;
@@ -166,6 +176,11 @@ a:hover {
 
 .tabla tr:hover {
   background-color: #ddd;
+}
+
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
 }
 
 .tabla td,

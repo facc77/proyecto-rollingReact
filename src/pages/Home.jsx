@@ -82,16 +82,24 @@ export default function Home() {
           </>
           <ul className="list-unstyled">
             <li className="my-2 text-size text-white">
-              <a href="../html/home.html">Home</a>
+              <Link to="/error">Home</Link>
+              {/*               <a href="../html/home.html">Home</a>
+               */}{" "}
             </li>
             <li className="my-2 text-size text-white">
-              <a href="../html/pagina404.html">About</a>
+              <Link to="/error">Sobre</Link>
+              {/*               <a href="../html/pagina404.html">About</a>
+               */}{" "}
             </li>
             <li className="my-2 text-size text-white">
-              <a href="../html/home.html">Services</a>
+              <Link to="/error">Servicios</Link>
+              {/*               <a href="../html/home.html">Services</a>
+               */}{" "}
             </li>
             <li className="my-2 text-size text-white">
-              <a href="https://rollingcodeschool.com/">Contact</a>
+              <Link to="/error">Contacto</Link>
+              {/*               <a href="https://rollingcodeschool.com/">Contact0</a>
+               */}{" "}
             </li>
           </ul>
         </div>
@@ -119,9 +127,13 @@ export default function Home() {
           </ul>
         </div>
         <div className="bottomFooter text-center text-size  text-white">
-          <a href="../html/home.html" target="_blank">
+          <Link to="/error">
+            {/*             <a href="/error" target="_blank">
+             */}{" "}
             Acerca del grupo de profesionales
-          </a>
+            {/*             </a>
+             */}{" "}
+          </Link>
         </div>
       </div>
     </div>

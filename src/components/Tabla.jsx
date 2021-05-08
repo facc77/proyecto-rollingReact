@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
+import Spinner from "react-bootstrap/Spinner";
 
 export default function Tabla(props) {
   const [usuarios, setUsuarios] = useState([]);
@@ -83,15 +84,21 @@ export default function Tabla(props) {
         </tr>
       </thead>
       <tbody>
-        {usuarios.length > 0
-          ? usuarios.map((user) => (
-              <tr key={user._id} onClick={() => handleClick(user._id)}>
-                <td>{user.usuario}</td>
-                <td>{user.email}</td>
-                <td>{user.permiso}</td>
-              </tr>
-            ))
-          : "tabla"}
+        {usuarios.length > 0 ? (
+          usuarios.map((user) => (
+            <tr key={user._id} onClick={() => handleClick(user._id)}>
+              <td>{user.usuario}</td>
+              <td>{user.email}</td>
+              <td>{user.permiso}</td>
+            </tr>
+          ))
+        ) : (
+          <div className="spinnerContainer">
+            <Spinner animation="border" role="status">
+              <span className="sr-only">Cargando...</span>
+            </Spinner>
+          </div>
+        )}
       </tbody>
     </table>
   );

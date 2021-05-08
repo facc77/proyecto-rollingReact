@@ -7,6 +7,7 @@ import {
   NavDropdown,
   Button,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Logo from "../img/logo.jpg";
 
 export default function NavBar() {
@@ -25,16 +26,12 @@ export default function NavBar() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#features">Home</Nav.Link>
-          <Nav.Link href="#pricing">Servicios</Nav.Link>
+          <Nav.Link href="/">Home</Nav.Link>
+          <Nav.Link href="/error">Servicios</Nav.Link>
           <NavDropdown title="Quienes Somos" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#action/3.2">
-              Nuestros valores
-            </NavDropdown.Item>
+            <NavDropdown.Item href="/error">Nuestros valores</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.3">
-              Nuestra vision
-            </NavDropdown.Item>
+            <NavDropdown.Item href="/error">Nuestra vision</NavDropdown.Item>
           </NavDropdown>
         </Nav>
         <Form inline>
@@ -43,9 +40,12 @@ export default function NavBar() {
             placeholder="Busqueda"
             className="mr-sm-2 "
           />
-          <Button className="navbarButton" variant="outline-light">
-            Buscar
-          </Button>
+          <Link to="/error">
+            {" "}
+            <Button className="navbarButton" variant="outline-light">
+              Buscar
+            </Button>
+          </Link>
         </Form>
       </Navbar.Collapse>
     </Navbar>
