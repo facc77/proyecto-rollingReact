@@ -39,7 +39,7 @@ export default function LoginPaciente() {
 
   let history = useHistory();
 
-  const verificarInicio = () => {
+  const verificarInicio = async () => {
     if (
       ("admin" === datoIngresado.datos.usuario) &
       ("admin" === datoIngresado.datos.contrasena)
@@ -60,9 +60,12 @@ export default function LoginPaciente() {
 
     if (busquedaUsuario) {
       if (busquedaUsuario.permiso === "aceptado") {
-        localStorage.setItem(
-          "usuarioLogueado",
-          JSON.stringify(busquedaUsuario.usuario)
+        const newUsuarioLog = {
+          usuario: busquedaUsuario.usuario,
+        };
+        await axios.put(
+          "https://proyecto-rolling.herokuapp.com/api/usuarioLog/609849ab45e6160015b2c27e",
+          newUsuarioLog
         );
         history.push("/inicioPaciente");
       } else {
