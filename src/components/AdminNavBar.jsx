@@ -12,6 +12,9 @@ import Logo from "../img/logo.jpg";
 import "../css/adminNavBar.css";
 
 export default function AdminNavBar() {
+  const logOut = () => {
+    localStorage.setItem("usuarioLogueado", JSON.stringify(""));
+  };
   return (
     <>
       <Navbar
@@ -45,7 +48,9 @@ export default function AdminNavBar() {
               <NavDropdown.Item href="/error">Mi perfil</NavDropdown.Item>
               <NavDropdown.Item href="/error">Configuracion</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/">Cerrar sesion</NavDropdown.Item>
+              <NavDropdown.Item onClick={logOut()} href="/">
+                Cerrar sesion
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Form inline>

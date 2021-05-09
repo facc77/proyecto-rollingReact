@@ -20,9 +20,9 @@ export default function Error(props) {
       <div className="error">
         <img src={Denegado} alt="error!" width="150px" height="150px" />
         <>
-          <h5>Error 404</h5>
+          <h5>Alto alli!</h5>
           <h6>
-            La pagina que estas buscando no existe. <br /> Aguarda para ser
+            No tienes permiso para ingresar a esta url. <br /> Aguarda para ser
             redireccionado!
           </h6>
         </>

@@ -3,12 +3,13 @@ import "../css/inicioPaciente.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import TablaTurnosMedicos from "../components/TablaTurnosMedicos.jsx";
+import MedicoNavbar from "../components/MedicoNavbar.jsx";
 
 export default function BusquedaPaciente(props) {
   return (
     <div>
       <div className="d-flex" id="content-wrapper">
-        <div id="sidebar-container" className="bg-primary">
+        <div id="sidebar-container" className="pacienteSidebar">
           <div className="logo">
             <h4 className="text-light font-weight-bold mb-0">San Remo</h4>
           </div>
@@ -24,80 +25,7 @@ export default function BusquedaPaciente(props) {
         </div>
 
         <div className="w-100">
-          <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-            <div className="container">
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-icon"></span>
-              </button>
-
-              <div
-                className="collapse navbar-collapse"
-                id="navbarSupportedContent"
-              >
-                <form className="form-inline position-relative d-inline-block my-2">
-                  <input
-                    className="form-control"
-                    type="search"
-                    id="busquedaInput"
-                    placeholder="Buscar"
-                    aria-label="Buscar"
-                  />
-                  <button
-                    className="btn position-absolute btn-search botonSearch"
-                    type="submit"
-                  >
-                    <i className="icon ion-md-search"></i>
-                  </button>
-                </form>
-                <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-                  <li className="nav-item dropdown" id="navbarDropdown1">
-                    <Link
-                      to="/"
-                      className="nav-link text-dark dropdown-toggle"
-                      href="#"
-                      id="navbarDropdown"
-                      role="button"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Cerrar Sesion
-                    </Link>
-
-                    <div
-                      className="dropdown-menu dropdown-menu-right menuHamburguesa"
-                      aria-labelledby="navbarDropdown"
-                    >
-                      <a className="dropdown-item" href="busquedaPaciente.html">
-                        Inicio
-                      </a>
-                      <a className="dropdown-item" href="busqueda.html">
-                        Busqueda
-                      </a>
-                      <a
-                        className="dropdown-item"
-                        href="TurnosConfirmados.html"
-                      >
-                        Turnos Confirmados
-                      </a>
-                      <div className="dropdown-divider"></div>
-                      <Link to="/" className="dropdown-item">
-                        Cerrar Sesion
-                      </Link>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+          <MedicoNavbar />
 
           <div id="content" className="bg-grey w-100 fila3">
             <section className="bg-light py-3">
@@ -110,9 +38,11 @@ export default function BusquedaPaciente(props) {
                     <p className="lead">Revisa la última información</p>
                   </div>
                   <div className="col-lg-3 col-md-4 d-flex">
-                    <button className="btn btn-primary w-100 align-self-center">
-                      Descargar reporte
-                    </button>
+                    <Link className="w-100" to="/error">
+                      <button className="btn botonSidebar w-100 align-self-center">
+                        Descargar reporte
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>

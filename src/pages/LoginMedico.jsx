@@ -38,8 +38,7 @@ export default function LoginUsuario() {
 
   let history = useHistory();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const verificarLogin = () => {
     if (
       ("admin" === datoIngresado.datos.usuario) &
       ("admin" === datoIngresado.datos.contrasena)
@@ -70,6 +69,16 @@ export default function LoginUsuario() {
     } else {
       let aviso = "las credenciales enviadas no son correctas";
       handleOpenModal(aviso);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (usuarios === {}) {
+      let aviso = "demoras en el servidor, vuelva a intentar";
+      handleOpenModal(aviso);
+    } else {
+      verificarLogin();
     }
   };
   const handleOpenModal = (props) => {

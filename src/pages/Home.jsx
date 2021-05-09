@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavBar from "../components/NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Jumbotron from "react-bootstrap/Jumbotron";
@@ -8,6 +8,10 @@ import Retrato from "../img/retratoMedico.jpg";
 import { Link } from "react-router-dom";
 
 export default function Home() {
+  useEffect(() => {
+    localStorage.setItem("usuarioLogueado", JSON.stringify(""));
+  }, []);
+
   return (
     <div className="homePage">
       <NavBar />
@@ -83,23 +87,15 @@ export default function Home() {
           <ul className="list-unstyled">
             <li className="my-2 text-size text-white">
               <Link to="/error">Home</Link>
-              {/*               <a href="../html/home.html">Home</a>
-               */}{" "}
             </li>
             <li className="my-2 text-size text-white">
               <Link to="/error">Sobre</Link>
-              {/*               <a href="../html/pagina404.html">About</a>
-               */}{" "}
             </li>
             <li className="my-2 text-size text-white">
               <Link to="/error">Servicios</Link>
-              {/*               <a href="../html/home.html">Services</a>
-               */}{" "}
             </li>
             <li className="my-2 text-size text-white">
               <Link to="/error">Contacto</Link>
-              {/*               <a href="https://rollingcodeschool.com/">Contact0</a>
-               */}{" "}
             </li>
           </ul>
         </div>
@@ -127,13 +123,7 @@ export default function Home() {
           </ul>
         </div>
         <div className="bottomFooter text-center text-size  text-white">
-          <Link to="/error">
-            {/*             <a href="/error" target="_blank">
-             */}{" "}
-            Acerca del grupo de profesionales
-            {/*             </a>
-             */}{" "}
-          </Link>
+          <Link to="/error">Acerca del grupo de profesionales</Link>
         </div>
       </div>
     </div>

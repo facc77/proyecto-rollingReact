@@ -29,7 +29,6 @@ export default function RegistroUsuario() {
 
   useEffect(() => {
     const fetchData = async () => {
-      //const res = await axios.get("http://localhost:4000/api/medicos");
       const res = await axios.get(
         "https://proyecto-rolling.herokuapp.com/api/medicos"
       );
@@ -49,7 +48,6 @@ export default function RegistroUsuario() {
   let history = useHistory();
 
   const handleError1 = (props) => {
-    console.log(props);
     let myInput = document.getElementById(props);
     myInput.setAttribute("style", "border-color:#e74c3c;");
   };
@@ -122,9 +120,9 @@ export default function RegistroUsuario() {
     checkUserName();
 
     async function checkUserName() {
-      console.log(usuarios);
       if (usuarios.length > 0 && state.form.usuario !== "") {
         const busquedaUsuario = usuarios.find(function (user) {
+          console.log(user.usuario, state.form.usuario);
           if (user.usuario === state.form.usuario) {
             setMensajeError1("usuario en uso");
             handleError1("usuario");

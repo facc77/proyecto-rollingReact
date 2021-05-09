@@ -12,6 +12,7 @@ import InicioPaciente from "./pages/InicioPaciente";
 import InicioMedico from "./pages/InicioMedico";
 import BusquedaPaciente from "./pages/BusquedaPaciente";
 import TurnosReservados from "./pages/TurnosReservados";
+import PermisoDenegado from "./pages/PermisoDenegado";
 
 import Exito from "./pages/Exito";
 import Error from "./pages/Error";
@@ -36,7 +37,8 @@ export default function App() {
         />
         <Route exact path="/turnosReservados" component={TurnosReservados} />
         <Route exact path="/Exito/:id" component={Exito} />
-        <Route exact path="/error/" component={Error} />
+        <Route exact path="/permisoDenegado" component={PermisoDenegado} />
+        <Route exact path="/error/id" component={Error} />
         <Route component={Error} />
       </Switch>
     </Router>

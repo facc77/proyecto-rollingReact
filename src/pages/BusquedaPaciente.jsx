@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect, useHistory } from "react";
 import "../css/inicioPaciente.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
@@ -8,6 +8,15 @@ import PacienteNavBar from "../components/PacienteNavBar.jsx";
 
 export default function BusquedaPaciente(props) {
   const [idMedico, setIdMedico] = useState(0);
+  const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+
+  let history = useHistory();
+
+  useEffect(() => {
+    if (usuarioLogueado === "") {
+      history.push("/permisoDenegado");
+    }
+  }, [usuarioLogueado, history]);
 
   const handleOpenModal = (props) => {
     setModalIsOpen(true);

@@ -1,18 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../css/inicioPaciente.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Buscador from "../components/Buscador.jsx";
 import PacienteNavBar from "../components/PacienteNavBar.jsx";
 
 export default function InicioPaciente() {
+  const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+
+  let history = useHistory();
+
+  useEffect(() => {
+    if (usuarioLogueado === "") {
+      history.push("/permisoDenegado");
+    }
+  }, [usuarioLogueado, history]);
+
   return (
     <div className="inicioPaciente">
       <div className="d-flex" id="content-wrapper">
-        <div
-          id="sidebar-container"
-          /* className=" bg-secondary " */ className="pacienteSidebar"
-        >
+        <div id="sidebar-container" className="pacienteSidebar">
           <div className="logo">
             <h4 className="text-light font-weight-bold mb-0">San Remo</h4>
           </div>

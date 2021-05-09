@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useHistory } from "react";
 import "../css/inicioPaciente.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
@@ -6,6 +6,15 @@ import TablaTurnos from "../components/TablaTurnos.jsx";
 import PacienteNavBar from "../components/PacienteNavBar.jsx";
 
 export default function BusquedaPaciente(props) {
+  const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+
+  let history = useHistory();
+
+  useEffect(() => {
+    if (usuarioLogueado === "") {
+      history.push("/permisoDenegado");
+    }
+  }, [usuarioLogueado, history]);
   return (
     <div>
       <div className="d-flex" id="content-wrapper">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import Spinner from "react-bootstrap/Spinner";
+import Spinner from "./Spinner";
 
 export default function Tabla(props) {
   const [usuarios, setUsuarios] = useState([]);
@@ -20,17 +20,7 @@ export default function Tabla(props) {
   useEffect(() => {
     fetchData();
   }, [fetchData]);
-  /*   const fetchData = async () => {
-    axios
-      .get(`http://localhost:4000/api/${props.endpoint}`)
-      .then((res) => {
-        setUsuarios(res.data);
-        console.log(usuarios);
-      })
-      .catch((err) => {
-        alert(err);
-      });
-  }; */
+
   const handleClick = async (id) => {
     console.log(id);
     const usuarioSeleccionado = usuarios.find((user) => user._id === id);
@@ -93,11 +83,7 @@ export default function Tabla(props) {
             </tr>
           ))
         ) : (
-          <div className="spinnerContainer">
-            <Spinner animation="border" role="status">
-              <span className="sr-only">Cargando...</span>
-            </Spinner>
-          </div>
+          <Spinner />
         )}
       </tbody>
     </table>

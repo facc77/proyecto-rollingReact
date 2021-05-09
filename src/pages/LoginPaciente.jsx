@@ -39,12 +39,13 @@ export default function LoginPaciente() {
 
   let history = useHistory();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const verificarInicio = () => {
     if (
       ("admin" === datoIngresado.datos.usuario) &
       ("admin" === datoIngresado.datos.contrasena)
     ) {
+      let usuarioLogueado = "admin";
+      localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
       history.push("/adminPaciente");
     }
     const busquedaUsuario = usuarios.usuarios.find(function (user) {
@@ -59,11 +60,11 @@ export default function LoginPaciente() {
 
     if (busquedaUsuario) {
       if (busquedaUsuario.permiso === "aceptado") {
-        history.push("/inicioPaciente");
         localStorage.setItem(
           "usuarioLogueado",
           JSON.stringify(busquedaUsuario.usuario)
         );
+        history.push("/inicioPaciente");
       } else {
         let aviso = "tienes que aguardar a la verificacion de la cuenta";
         handleOpenModal(aviso);
@@ -75,6 +76,18 @@ export default function LoginPaciente() {
       handleOpenModal(aviso);
     }
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (usuarios === {}) {
+      let aviso = " Hay demoras en el servidor, vuelva a intentar";
+      handleOpenModal(aviso);
+    } else {
+      verificarInicio();
+    }
+  };
+
   const handleOpenModal = (props) => {
     setModalIsOpen(true);
     setMensajeModal(props);
