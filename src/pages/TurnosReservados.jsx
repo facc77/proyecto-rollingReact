@@ -1,7 +1,7 @@
-import React, { useEffect, useHistory } from "react";
+import React, { useEffect } from "react";
 import "../css/inicioPaciente.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import TablaTurnos from "../components/TablaTurnos.jsx";
 import PacienteNavBar from "../components/PacienteNavBar.jsx";
 

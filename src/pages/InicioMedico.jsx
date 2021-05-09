@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/inicioPaciente.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import TablaTurnosMedicos from "../components/TablaTurnosMedicos.jsx";
 import MedicoNavbar from "../components/MedicoNavbar.jsx";
 
