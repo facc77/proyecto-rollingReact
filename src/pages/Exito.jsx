@@ -7,10 +7,6 @@ export default function RegistroListo(props) {
   const parametro = props.match.params.id;
   let history = useHistory();
 
-  /*   function Redirect() {
-    history.push(parametro === "registro" ? "/" : "/turnosReservados");
-  } */
-
   const Redirect = useCallback(() => {
     history.push(parametro === "registro" ? "/" : "/turnosReservados");
   }, [history, parametro]);

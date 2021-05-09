@@ -15,6 +15,7 @@ export default function LoginUsuario() {
   });
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [mensajeModal, setMensajeModal] = useState("");
+
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios.get(
@@ -25,7 +26,7 @@ export default function LoginUsuario() {
       });
     };
     fetchData();
-  }, []);
+  }, [usuarios]);
 
   const handleChange = (e) => {
     setDatosIngresado({

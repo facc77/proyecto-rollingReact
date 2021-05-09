@@ -32,7 +32,7 @@ function ModalMedico(props) {
       }
     }
     //fetchData();
-  }, [props.modalIsOpen, props.idMedico]);
+  });
 
   const handleOpenModal = () => {
     props.setModalIsOpen(false);

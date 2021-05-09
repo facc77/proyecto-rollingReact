@@ -10,19 +10,17 @@ export default function Tabla(props) {
       .get(`https://proyecto-rolling.herokuapp.com/api/${props.endpoint}`)
       .then((res) => {
         setUsuarios(res.data);
-        console.log(usuarios);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, [props.endpoint, usuarios]);
+  }, [props.endpoint]);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
   const handleClick = async (id) => {
-    console.log(id);
     const usuarioSeleccionado = usuarios.find((user) => user._id === id);
     if (props.endpoint === "pacientes") {
       const newPaciente = {
@@ -32,8 +30,6 @@ export default function Tabla(props) {
         permiso:
           usuarioSeleccionado.permiso === "aceptado" ? "denegado" : "aceptado",
       };
-      console.log(usuarioSeleccionado);
-      console.log(newPaciente);
       await axios.put(
         "https://proyecto-rolling.herokuapp.com/api/pacientes/" + id,
         newPaciente

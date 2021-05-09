@@ -14,7 +14,7 @@ export default function InicioPaciente() {
     if (usuarioLogueado === "") {
       history.push("/permisoDenegado");
     }
-  });
+  }, [history, usuarioLogueado]);
 
   return (
     <div className="inicioPaciente">
@@ -51,7 +51,7 @@ export default function InicioPaciente() {
                 <div className="row">
                   <div className="col-lg-9 col-md-8">
                     <h1 id="nombreUsuario" className="font-weight-bold mb-0">
-                      usuario
+                      {usuarioLogueado}
                     </h1>
                     <p className="lead">Revisa la última información</p>
                   </div>

@@ -4,6 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 export default function pacienteNavBar() {
+  const logOut = () => {
+    localStorage.setItem("usuarioLogueado", JSON.stringify(""));
+  };
   return (
     <>
       <Navbar bg="light" expand="lg" className="border-bottom py-3">
@@ -46,7 +49,9 @@ export default function pacienteNavBar() {
                 Turnos Reservados
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/">Cerrar Sesion </NavDropdown.Item>
+              <NavDropdown.Item onClick={logOut()} href="/">
+                Cerrar Sesion{" "}
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

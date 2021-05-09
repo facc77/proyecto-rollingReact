@@ -13,7 +13,7 @@ export default function AdminPaciente() {
     if (nombreUsuario !== "admin") {
       history.push("/permisoDenegado");
     }
-  }, [history, nombreUsuario]);
+  });
 
   return (
     <div>

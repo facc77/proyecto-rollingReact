@@ -29,7 +29,7 @@ export default function RegistroPaciente() {
       setUsuarios(res.data);
     };
     fetchData();
-  }, []);
+  });
 
   const handleChange = (e) => {
     setState({

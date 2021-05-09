@@ -24,7 +24,6 @@ export default function BusquedaPaciente(props) {
   };
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  //const [modalTurnoIsOpen, setModalTurnoIsOpen] = useState(false);
 
   return (
     <div>

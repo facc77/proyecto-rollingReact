@@ -35,7 +35,7 @@ export default function RegistroUsuario() {
       setUsuarios(res.data);
     };
     fetchData();
-  }, []);
+  });
 
   const handleChange = (e) => {
     setState({

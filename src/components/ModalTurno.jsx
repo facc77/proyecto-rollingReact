@@ -35,7 +35,7 @@ export default function ModalTurno(props) {
       setTurnosAlmacenados(res.data);
     };
     fetchData();
-  }, []);
+  });
 
   const manana = [
     { hora: "9", id: 1 },
