@@ -14,7 +14,7 @@ export default function InicioPaciente() {
     if (usuarioLogueado === "") {
       history.push("/permisoDenegado");
     }
-  }, [usuarioLogueado, history]);
+  });
 
   return (
     <div className="inicioPaciente">
