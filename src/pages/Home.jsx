@@ -5,7 +5,7 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Button from "react-bootstrap/Button";
 import "../css/home.css";
 import Retrato from "../img/retratoMedico.jpg";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   useEffect(() => {
