@@ -45,6 +45,14 @@ export default function LoginUsuario() {
       ("admin" === datoIngresado.datos.usuario) &
       ("admin" === datoIngresado.datos.contrasena)
     ) {
+      const newUsuarioLog = {
+        usuario: "admin",
+      };
+      await axios.put(
+        "https://proyecto-rolling.herokuapp.com/api/usuarioLog/609849ab45e6160015b2c27e",
+        newUsuarioLog
+      );
+      history.push("/adminPaciente");
       history.push("/adminMedico");
     }
     const busquedaUsuario = usuarios.usuarios.find(function (user) {
