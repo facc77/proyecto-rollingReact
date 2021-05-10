@@ -127,10 +127,10 @@ export default function RegistroUsuario() {
             setMensajeError1("usuario en uso");
             handleError1("usuario");
             console.log("usuario en uso");
-            return user;
+            return null;
           }
           handleSuccess1("usuario");
-          return null;
+          return user;
         });
         if (busquedaUsuario) {
           return true;

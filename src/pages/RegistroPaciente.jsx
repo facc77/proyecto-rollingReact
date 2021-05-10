@@ -132,10 +132,10 @@ export default function RegistroPaciente() {
         if (user.usuario === state.form.usuario) {
           setMensajeError1("usuario en uso");
           handleError1("usuario");
-          return user;
+          return null;
         }
         handleSuccess1("usuario");
-        return null;
+        return user;
       });
       if (busquedaUsuario) {
         return true;
