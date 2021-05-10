@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "../css/inicioPaciente.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useHistory } from "react-router-dom";
@@ -6,15 +7,28 @@ import Buscador from "../components/Buscador.jsx";
 import PacienteNavBar from "../components/PacienteNavBar.jsx";
 
 export default function InicioPaciente() {
-  const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
-
+  const [usuarioLogueado, setUsuarioLogueado] = useState("");
   let history = useHistory();
 
   useEffect(() => {
-    if (usuarioLogueado === "") {
+    async function fetchData() {
+      await axios
+        .get(
+          `https://proyecto-rolling.herokuapp.com/api/usuarioLog/609849ab45e6160015b2c27e`
+        )
+        .then((res) => {
+          setUsuarioLogueado(res.data.usuario);
+          console.log(usuarioLogueado);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+    fetchData();
+    if (usuarioLogueado === "noSession") {
       history.push("/permisoDenegado");
     }
-  }, [history, usuarioLogueado]);
+  });
 
   return (
     <div className="inicioPaciente">

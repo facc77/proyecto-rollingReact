@@ -1,12 +1,24 @@
 import React from "react";
+import axios from "axios";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
-export default function pacienteNavBar() {
-  const logOut = () => {
-    localStorage.setItem("usuarioLogueado", JSON.stringify(""));
+export default function PacienteNavBar() {
+  let history = useHistory();
+
+  const logOut = async () => {
+    const newUsuarioLog = {
+      usuario: "noSession",
+    };
+    await axios.put(
+      "https://proyecto-rolling.herokuapp.com/api/usuarioLog/609849ab45e6160015b2c27e",
+      newUsuarioLog
+    );
+
+    history.push("/");
   };
+
   return (
     <>
       <Navbar bg="light" expand="lg" className="border-bottom py-3">
@@ -49,7 +61,12 @@ export default function pacienteNavBar() {
                 Turnos Reservados
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item onClick={logOut()} href="/">
+              <NavDropdown.Item
+                onClick={() => {
+                  logOut();
+                  console.log("hola");
+                }}
+              >
                 Cerrar Sesion{" "}
               </NavDropdown.Item>
             </NavDropdown>

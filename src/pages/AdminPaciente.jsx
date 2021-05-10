@@ -1,16 +1,30 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import AdminNavBar from "../components/AdminNavBar";
 import "../css/adminPaciente.css";
 import Tabla from "../components/Tabla";
 import { useHistory } from "react-router-dom";
 
 export default function AdminPaciente() {
-  const nombreUsuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
-
+  const [usuarioLogueado, setUsuarioLogueado] = useState("");
   let history = useHistory();
 
   useEffect(() => {
-    if (nombreUsuario !== "admin") {
+    async function fetchData() {
+      await axios
+        .get(
+          `https://proyecto-rolling.herokuapp.com/api/usuarioLog/609849ab45e6160015b2c27e`
+        )
+        .then((res) => {
+          setUsuarioLogueado(res.data.usuario);
+          console.log(usuarioLogueado);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+    fetchData();
+    if (usuarioLogueado === "noSession") {
       history.push("/permisoDenegado");
     }
   });

@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import {
   Navbar,
   Nav,
@@ -7,13 +8,23 @@ import {
   NavDropdown,
   Button,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Logo from "../img/logo.jpg";
 import "../css/adminNavBar.css";
 
 export default function AdminNavBar() {
-  const logOut = () => {
-    localStorage.setItem("usuarioLogueado", JSON.stringify(""));
+  let history = useHistory();
+
+  const logOut = async () => {
+    const newUsuarioLog = {
+      usuario: "noSession",
+    };
+    await axios.put(
+      "https://proyecto-rolling.herokuapp.com/api/usuarioLog/609849ab45e6160015b2c27e",
+      newUsuarioLog
+    );
+
+    history.push("/");
   };
   return (
     <>
@@ -48,7 +59,12 @@ export default function AdminNavBar() {
               <NavDropdown.Item href="/error">Mi perfil</NavDropdown.Item>
               <NavDropdown.Item href="/error">Configuracion</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item onClick={logOut()} href="/">
+              <NavDropdown.Item
+                onClick={() => {
+                  logOut();
+                  console.log("hola");
+                }}
+              >
                 Cerrar sesion
               </NavDropdown.Item>
             </NavDropdown>

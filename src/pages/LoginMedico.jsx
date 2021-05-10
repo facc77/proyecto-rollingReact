@@ -4,6 +4,7 @@ import "../css/loginMedico.css";
 import Logo from "../img/logo.jpg";
 import { Link, useHistory } from "react-router-dom";
 import Modal from "react-modal";
+import Spinner from "../components/Spinner";
 
 export default function LoginUsuario() {
   const [usuarios, setUsuario] = useState({});
@@ -39,7 +40,7 @@ export default function LoginUsuario() {
 
   let history = useHistory();
 
-  const verificarLogin = () => {
+  const verificarLogin = async () => {
     if (
       ("admin" === datoIngresado.datos.usuario) &
       ("admin" === datoIngresado.datos.contrasena)
@@ -58,9 +59,12 @@ export default function LoginUsuario() {
 
     if (busquedaUsuario) {
       if (busquedaUsuario.permiso === "aceptado") {
-        localStorage.setItem(
-          "usuarioLogueado",
-          JSON.stringify(busquedaUsuario.nombreCompleto)
+        const newUsuarioLog = {
+          usuario: busquedaUsuario.usuario,
+        };
+        await axios.put(
+          "https://proyecto-rolling.herokuapp.com/api/usuarioLog/609849ab45e6160015b2c27e",
+          newUsuarioLog
         );
         history.push("/inicioMedico");
       } else {
@@ -89,57 +93,63 @@ export default function LoginUsuario() {
 
   return (
     <>
-      {" "}
-      <div className="fondoPantallaMedico">
-        <div className="container2Medico">
-          <div className="headerLogin">
-            <img src={Logo} alt="" />
-            <h2>BIENVENIDO</h2>
+      {usuarios !== {} ? (
+        <>
+          {" "}
+          <div className="fondoPantallaMedico">
+            <div className="container2Medico">
+              <div className="headerLogin">
+                <img src={Logo} alt="" />
+                <h2>BIENVENIDO</h2>
+              </div>
+              <form onSubmit={handleSubmit} className="formLogin">
+                <div className="form-group">
+                  <label>Usuario</label>
+                  <input
+                    type="text"
+                    placeholder="ingrese usuario"
+                    className="form-control"
+                    onChange={handleChange}
+                    name="usuario"
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Contrasena</label>
+                  <input
+                    type="password"
+                    placeholder="ingrese contrasena"
+                    className="form-control"
+                    onChange={handleChange}
+                    name="contrasena"
+                  />
+                </div>
+                <Link className="linkRegister" to="/registroMedico">
+                  No estas registrado?
+                </Link>
+                <button className="btn btn-info loginButton">Enviar</button>
+              </form>
+            </div>
           </div>
-          <form onSubmit={handleSubmit} className="formLogin">
-            <div className="form-group">
-              <label>Usuario</label>
-              <input
-                type="text"
-                placeholder="ingrese usuario"
-                className="form-control"
-                onChange={handleChange}
-                name="usuario"
-              />
-            </div>
-            <div className="form-group">
-              <label>Contrasena</label>
-              <input
-                type="password"
-                placeholder="ingrese contrasena"
-                className="form-control"
-                onChange={handleChange}
-                name="contrasena"
-              />
-            </div>
-            <Link className="linkRegister" to="/registroMedico">
-              No estas registrado?
-            </Link>
-            <button className="btn btn-info loginButton">Enviar</button>
-          </form>
-        </div>
-      </div>
-      <Modal
-        isOpen={modalIsOpen}
-        ariaHideApp={false}
-        onRequestClose={() => setModalIsOpen(false)}
-        mensajeModal={mensajeModal}
-        className="modalLogin-content-Medico"
-      >
-        <p className="modalTitle">Atencion!</p>
-        <p>{mensajeModal}</p>
-        <button
-          onClick={() => setModalIsOpen(false)}
-          className="btn btn-primary"
-        >
-          Cerrar
-        </button>
-      </Modal>
+          <Modal
+            isOpen={modalIsOpen}
+            ariaHideApp={false}
+            onRequestClose={() => setModalIsOpen(false)}
+            mensajeModal={mensajeModal}
+            className="modalLogin-content-Medico"
+          >
+            <p className="modalTitle">Atencion!</p>
+            <p>{mensajeModal}</p>
+            <button
+              onClick={() => setModalIsOpen(false)}
+              className="btn btn-primary"
+            >
+              Cerrar
+            </button>
+          </Modal>
+        </>
+      ) : (
+        <Spinner />
+      )}
     </>
   );
 }
