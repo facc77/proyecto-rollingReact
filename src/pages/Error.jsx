@@ -22,7 +22,7 @@ export default function Error(props) {
         <>
           <h5>Error 404</h5>
           <h6>
-            La pagina que estas buscando no existe. <br /> Aguarda para ser
+            La pagina que estás buscando no existe. <br /> Aguarda para ser
             redireccionado!
           </h6>
         </>

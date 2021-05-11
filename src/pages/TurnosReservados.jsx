@@ -82,7 +82,7 @@ export default function BusquedaPaciente(props) {
               <div className="fondo">
                 <div className="tablaContainer">
                   <div className="tabla">
-                    <TablaTurnos />
+                    <TablaTurnos usuarioLogueado={usuarioLogueado} />
                   </div>
                 </div>
               </div>

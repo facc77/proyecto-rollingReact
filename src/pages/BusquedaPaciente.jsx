@@ -40,7 +40,7 @@ export default function BusquedaPaciente(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   return (
-    <div>
+    <div className="busquedaPaciente">
       <div className="d-flex" id="content-wrapper">
         <div id="sidebar-container" className="pacienteSidebar">
           <div className="logo">
@@ -102,6 +102,7 @@ export default function BusquedaPaciente(props) {
                 idMedico={idMedico}
                 modalIsOpen={modalIsOpen}
                 setModalIsOpen={setModalIsOpen}
+                usuarioLogueado={usuarioLogueado}
               ></ModalMedico>
             </section>
           </div>

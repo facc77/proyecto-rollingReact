@@ -7,7 +7,7 @@ import Modal from "react-modal";
 
 export default function ModalTurno(props) {
   const [turnosAlmacenados, setTurnosAlmacenados] = useState({});
-  const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+  const usuarioLogueado = props.usuarioLogueado;
   const [date, setDate] = useState(new Date());
   const fechaActual = `${date.getDate(date)}-${
     date.getMonth(date) + 1

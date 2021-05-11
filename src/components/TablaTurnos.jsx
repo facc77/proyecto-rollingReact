@@ -2,9 +2,9 @@ import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import Spinner from "./Spinner";
 
-export default function TablaTurnos() {
+export default function TablaTurnos(props) {
   const [turnosConfirmados, setTurnosConfirmados] = useState([]);
-  const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+  const usuarioLogueado = props.usuarioLogueado;
 
   const fetchData = useCallback(async () => {
     axios

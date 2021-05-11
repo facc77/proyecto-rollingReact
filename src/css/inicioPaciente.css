@@ -124,7 +124,9 @@ a:hover {
 }
 
 #content {
-  overflow-y: auto;
+  overflow-y: hidden;
+  /*   overflow-y: auto;
+ */
   height: 100vh;
   padding-bottom: 5rem;
 }
@@ -213,6 +215,9 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  .searchContainer {
+    margin-top: 5px;
+  }
   #sidebar-container {
     display: none;
   }

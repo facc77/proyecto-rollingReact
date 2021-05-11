@@ -6,7 +6,7 @@ import "../css/modalCss.css";
 
 function ModalMedico(props) {
   const idMedico = props.idMedico;
-  //const [idMedico, setIdMedico] = useState(props.idMedico);
+  const usuarioLogueado = props.usuarioLogueado;
   const [medicoSeleccionado, setMedicoSeleccionado] = useState({});
 
   const [modalTurnoIsOpen, setModalTurnoIsOpen] = useState(false);
@@ -113,6 +113,7 @@ function ModalMedico(props) {
           medicoSeleccionado={medicoSeleccionado}
           modalTurnoIsOpen={modalTurnoIsOpen}
           setModalTurnoIsOpen={setModalTurnoIsOpen}
+          usuarioLogueado={usuarioLogueado}
         />
       </Modal>
     </>

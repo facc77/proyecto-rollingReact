@@ -1,11 +1,22 @@
 import React from "react";
+import axios from "axios";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 export default function MedicoNavbar() {
-  const logOut = () => {
-    localStorage.setItem("usuarioLogueado", JSON.stringify(""));
+  let history = useHistory();
+
+  const logOut = async () => {
+    const newUsuarioLog = {
+      usuario: "noSession",
+    };
+    await axios.put(
+      "https://proyecto-rolling.herokuapp.com/api/usuarioLog/609849ab45e6160015b2c27e",
+      newUsuarioLog
+    );
+
+    history.push("/");
   };
   return (
     <>
@@ -50,7 +61,6 @@ export default function MedicoNavbar() {
                 onClick={() => {
                   logOut();
                 }}
-                href="/"
               >
                 Cerrar Sesion{" "}
               </NavDropdown.Item>

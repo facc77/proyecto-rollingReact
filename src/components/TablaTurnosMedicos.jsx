@@ -3,9 +3,8 @@ import axios from "axios";
 import Modal from "react-modal";
 import Spinner from "./Spinner";
 
-export default function TablaTurnos() {
+export default function TablaTurnos({ usuarioLogueado }) {
   const [turnosConfirmados, setTurnosConfirmados] = useState([]);
-  const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [mensajeModal, setMensajeModal] = useState("");
 
@@ -14,7 +13,7 @@ export default function TablaTurnos() {
       .get(`https://proyecto-rolling.herokuapp.com/api/turnos`)
       .then((res) => {
         const turnos = res.data.filter(function (turno) {
-          if (turno.medico === usuarioLogueado) {
+          if (turno.usuarioMedico === usuarioLogueado) {
             return turno;
           }
           return null;
