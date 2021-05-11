@@ -8,10 +8,14 @@ body {
   overflow: hidden;
   /*   font-family: "Muli", sans-serif;
  */
-  font-weight: 300;
-  /*   color: var(--primary);
+  /*   font-weight: 300;
+ */ /*   color: var(--primary);
  */
   background-color: #efefef;
+}
+
+#basic-nav-dropdown {
+  color: black;
 }
 
 .nabvarAlign {
@@ -74,14 +78,9 @@ body {
   color: white !important;
 }
 
-/* .inicioPaciente {
-  overflow: hidden;
-  height: 100%;
-  font-family: "Muli", sans-serif;
+.inicioPaciente {
   font-weight: 300;
-  color: var(--primary);
-  background-color: #efefef;
-} */
+}
 
 a:hover {
   text-decoration: none;
