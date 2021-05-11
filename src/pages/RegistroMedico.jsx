@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import "../css/registroMedico.css";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { CircularProgress } from "@material-ui/core";
 
 export default function RegistroUsuario() {
+  const [loadingButton, setLoadingButton] = useState("0");
   const [state, setState] = useState({
     form: {
       usuario: "",
@@ -26,6 +28,12 @@ export default function RegistroUsuario() {
   const [mensajeError4, setMensajeError4] = useState("");
   const [mensajeError5, setMensajeError5] = useState("");
   const [mensajeError6, setMensajeError6] = useState("");
+
+  const style = {
+    height: 20,
+    width: 20,
+    color: "white",
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -119,7 +127,7 @@ export default function RegistroUsuario() {
     }
     checkUserName();
 
-    async function checkUserName() {
+    /*     async function checkUserName() {
       if (usuarios.length > 0 && state.form.usuario !== "") {
         const busquedaUsuario = usuarios.find(function (user) {
           console.log(user.usuario, state.form.usuario);
@@ -142,6 +150,31 @@ export default function RegistroUsuario() {
         console.log("correcto");
         return true;
       }
+    } */
+    function checkUserName() {
+      if (usuarios.length > 0 && state.form.usuario !== "") {
+        let userExist = 0;
+        usuarios.find(function (user) {
+          if (user.usuario === state.form.usuario) {
+            setMensajeError1("usuario en uso");
+            handleError1("usuario");
+            userExist = userExist + 1;
+            return true;
+          }
+          handleSuccess1("usuario");
+          return null;
+        });
+        console.log(userExist);
+
+        if (userExist === 1) {
+          console.log("usuario existe");
+          return null;
+        } else {
+          return true;
+        }
+      } else {
+        return true;
+      }
     }
 
     if (
@@ -152,13 +185,14 @@ export default function RegistroUsuario() {
       state.form.contrasena !== "" &&
       state.form.contrasena === state.form.contrasena2
     ) {
-      console.log("almacenado");
       almacenar();
+    } else {
     }
   };
 
   const almacenar = async () => {
-    const newMedico = {
+    setLoadingButton("1");
+    /*     const newMedico = {
       nombreCompleto: state.form.nombreCompleto,
       usuario: state.form.usuario,
       email: state.form.email,
@@ -169,13 +203,11 @@ export default function RegistroUsuario() {
       horario: state.form.horario,
       contrasena2: state.form.contrasena2,
     };
-    //await axios.post("http://localhost:4000/api/medicos", newMedico);
     await axios.post(
       "https://proyecto-rolling.herokuapp.com/api/medicos",
       newMedico
     );
-    console.log(newMedico);
-    history.push("/exito/registro");
+    history.push("/exito/registro"); */
   };
 
   return (
@@ -304,7 +336,13 @@ export default function RegistroUsuario() {
               </div>
             </div>
           </div>
-          <button className="btn btn-info loginButton">Enviar</button>
+          <button className="btn btn-info loginButton">
+            {loadingButton === "1" ? (
+              <CircularProgress style={style} />
+            ) : (
+              "Enviar"
+            )}
+          </button>
         </form>
       </div>
     </div>

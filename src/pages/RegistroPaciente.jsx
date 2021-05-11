@@ -53,7 +53,6 @@ export default function RegistroPaciente() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(state.form);
     if (state.form.usuario === "") {
       setMensajeError1("El campo no puede quedar vacio");
       handleError1("usuario");
@@ -126,21 +125,26 @@ export default function RegistroPaciente() {
     history.push("/exito/registro");
   };
 
-  async function checkUserName() {
+  function checkUserName() {
     if (usuarios.length > 0 && state.form.usuario !== "") {
-      const busquedaUsuario = usuarios.find(function (user) {
+      let userExist = 0;
+      usuarios.find(function (user) {
         if (user.usuario === state.form.usuario) {
           setMensajeError1("usuario en uso");
           handleError1("usuario");
-          return null;
+          userExist = userExist + 1;
+          return true;
         }
         handleSuccess1("usuario");
-        return user;
+        return null;
       });
-      if (busquedaUsuario) {
-        return true;
+      console.log(userExist);
+
+      if (userExist === 1) {
+        console.log("usuario existe");
+        return null;
       } else {
-        return false;
+        return true;
       }
     } else {
       return true;
