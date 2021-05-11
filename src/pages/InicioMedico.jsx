@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "../css/inicioPaciente.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useHistory } from "react-router-dom";
@@ -6,15 +7,28 @@ import TablaTurnosMedicos from "../components/TablaTurnosMedicos.jsx";
 import MedicoNavbar from "../components/MedicoNavbar.jsx";
 
 export default function BusquedaPaciente(props) {
-  const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
-
+  const [usuarioLogueado, setUsuarioLogueado] = useState("");
   let history = useHistory();
 
   useEffect(() => {
-    if (usuarioLogueado === "") {
+    async function fetchData() {
+      await axios
+        .get(
+          `https://proyecto-rolling.herokuapp.com/api/usuarioLog/609849ab45e6160015b2c27e`
+        )
+        .then((res) => {
+          setUsuarioLogueado(res.data.usuario);
+          console.log(usuarioLogueado);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+    fetchData();
+    if (usuarioLogueado === "noSession") {
       history.push("/permisoDenegado");
     }
-  }, [usuarioLogueado, history]);
+  });
   return (
     <div>
       <div className="d-flex" id="content-wrapper">

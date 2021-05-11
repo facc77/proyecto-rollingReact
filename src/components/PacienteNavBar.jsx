@@ -64,10 +64,9 @@ export default function PacienteNavBar() {
               <NavDropdown.Item
                 onClick={() => {
                   logOut();
-                  console.log("hola");
                 }}
               >
-                Cerrar Sesion{" "}
+                Cerrar Sesion
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

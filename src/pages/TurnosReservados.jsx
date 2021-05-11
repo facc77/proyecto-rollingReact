@@ -64,7 +64,7 @@ export default function BusquedaPaciente(props) {
                 <div className="row">
                   <div className="col-lg-9 col-md-8">
                     <h1 id="nombreUsuario" className="font-weight-bold mb-0">
-                      usuario
+                      {usuarioLogueado}
                     </h1>
                     <p className="lead">Revisa la última información</p>
                   </div>

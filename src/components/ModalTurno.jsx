@@ -22,6 +22,7 @@ export default function ModalTurno(props) {
       motivoConsulta: "",
       medico: props.medicoSeleccionado.nombreCompleto,
       especialidad: props.medicoSeleccionado.disciplina,
+      usuarioMedico: props.medicoSeleccionado.usuario,
     },
   });
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -106,6 +107,7 @@ export default function ModalTurno(props) {
       motivoConsulta: state.form.motivoConsulta,
       medico: state.form.medico,
       especialidad: state.form.especialidad,
+      usuarioMedico: state.form.usuarioMedico,
     };
     await axios.post(
       "https://proyecto-rolling.herokuapp.com/api/turnos",

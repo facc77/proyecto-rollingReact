@@ -46,7 +46,12 @@ export default function MedicoNavbar() {
                 Turnos Reservados
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item onClick={logOut()} href="/">
+              <NavDropdown.Item
+                onClick={() => {
+                  logOut();
+                }}
+                href="/"
+              >
                 Cerrar Sesion{" "}
               </NavDropdown.Item>
             </NavDropdown>

@@ -20,17 +20,12 @@ export default function TablaTurnos() {
       })
       .catch((err) => {
         console.log(err);
-        alert(err);
       });
   }, [usuarioLogueado]);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
-
-  const handleClick = async (id) => {
-    // props.handleOpenModal(id);
-  };
 
   return (
     <table>
@@ -45,7 +40,7 @@ export default function TablaTurnos() {
       {turnosConfirmados.length > 0 ? (
         turnosConfirmados.map((turno) => (
           <tbody>
-            <tr key={turno._id} onDoubleClick={() => handleClick(turno._id)}>
+            <tr key={turno._id}>
               <td>{turno.medico}</td>
               <td>{turno.hora}</td>
               <td>{turno.fecha}</td>

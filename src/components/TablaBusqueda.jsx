@@ -42,7 +42,7 @@ export default function Tabla(props) {
       <tbody>
         {usuarios.length > 0 ? (
           usuarios.map((user) => (
-            <tr key={user._id} onDoubleClick={() => handleClick(user._id)}>
+            <tr key={user._id} onClick={() => handleClick(user._id)}>
               <td>{user.nombreCompleto}</td>
               <td>{user.disciplina}</td>
             </tr>

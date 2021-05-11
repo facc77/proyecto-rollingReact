@@ -192,7 +192,7 @@ export default function RegistroUsuario() {
 
   const almacenar = async () => {
     setLoadingButton("1");
-    /*     const newMedico = {
+    const newMedico = {
       nombreCompleto: state.form.nombreCompleto,
       usuario: state.form.usuario,
       email: state.form.email,
@@ -207,7 +207,7 @@ export default function RegistroUsuario() {
       "https://proyecto-rolling.herokuapp.com/api/medicos",
       newMedico
     );
-    history.push("/exito/registro"); */
+    history.push("/exito/registro");
   };
 
   return (
