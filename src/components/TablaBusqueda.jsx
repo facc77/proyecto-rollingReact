@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import Spinner from "./Spinner";
+import SpinnerSinTurnos from "./SpinnerSinTurnos";
 
 export default function Tabla(props) {
   const [usuarios, setUsuarios] = useState([]);
@@ -42,13 +42,18 @@ export default function Tabla(props) {
       <tbody>
         {usuarios.length > 0 ? (
           usuarios.map((user) => (
-            <tr key={user._id} onClick={() => handleClick(user._id)}>
+            <tr
+              title="clickea para ver datos del medico"
+              className="tableRow"
+              key={user._id}
+              onClick={() => handleClick(user._id)}
+            >
               <td>{user.nombreCompleto}</td>
               <td>{user.disciplina}</td>
             </tr>
           ))
         ) : (
-          <Spinner />
+          <SpinnerSinTurnos />
         )}
       </tbody>
     </table>

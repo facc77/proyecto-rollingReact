@@ -17,7 +17,6 @@ export default function AdminPaciente() {
         )
         .then((res) => {
           setUsuarioLogueado(res.data.usuario);
-          console.log(usuarioLogueado);
         })
         .catch((err) => {
           console.log(err);

@@ -127,30 +127,6 @@ export default function RegistroUsuario() {
     }
     checkUserName();
 
-    /*     async function checkUserName() {
-      if (usuarios.length > 0 && state.form.usuario !== "") {
-        const busquedaUsuario = usuarios.find(function (user) {
-          console.log(user.usuario, state.form.usuario);
-          if (user.usuario === state.form.usuario) {
-            setMensajeError1("usuario en uso");
-            handleError1("usuario");
-            console.log("usuario en uso");
-            return null;
-          }
-          handleSuccess1("usuario");
-          return user;
-        });
-        if (busquedaUsuario) {
-          return true;
-        } else {
-          console.log("usuario no usado");
-          return false;
-        }
-      } else {
-        console.log("correcto");
-        return true;
-      }
-    } */
     function checkUserName() {
       if (usuarios.length > 0 && state.form.usuario !== "") {
         let userExist = 0;
@@ -164,10 +140,8 @@ export default function RegistroUsuario() {
           handleSuccess1("usuario");
           return null;
         });
-        console.log(userExist);
 
         if (userExist === 1) {
-          console.log("usuario existe");
           return null;
         } else {
           return true;

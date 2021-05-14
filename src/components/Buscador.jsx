@@ -7,14 +7,12 @@ export default function Buscador() {
 
   const handleChange = (e) => {
     setBusqueda(e.target.value);
-    console.log(busqueda);
   };
 
   let history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(busqueda);
     history.push(`/busquedaPaciente/${busqueda}`);
   };
 

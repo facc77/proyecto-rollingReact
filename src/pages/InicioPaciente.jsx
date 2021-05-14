@@ -18,7 +18,6 @@ export default function InicioPaciente() {
         )
         .then((res) => {
           setUsuarioLogueado(res.data.usuario);
-          console.log(usuarioLogueado);
         })
         .catch((err) => {
           console.log(err);

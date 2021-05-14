@@ -72,7 +72,12 @@ export default function Tabla(props) {
       <tbody>
         {usuarios.length > 0 ? (
           usuarios.map((user) => (
-            <tr key={user._id} onClick={() => handleClick(user._id)}>
+            <tr
+              title="Clickea para permitir o denegar acceso"
+              className="tableRow"
+              key={user._id}
+              onClick={() => handleClick(user._id)}
+            >
               <td>{user.usuario}</td>
               <td>{user.email}</td>
               <td>{user.permiso}</td>

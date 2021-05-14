@@ -66,7 +66,6 @@ export default function ModalTurno(props) {
         [e.target.name]: e.target.value,
       },
     });
-    console.log(state.form);
   };
 
   let history = useHistory();
@@ -87,8 +86,6 @@ export default function ModalTurno(props) {
       let aviso = "el turno se encuentra ocupado";
       handleOpenModal(aviso);
     } else {
-      console.log(state.form);
-      console.log("turno almacenado");
       almacenar();
     }
   };
@@ -96,7 +93,6 @@ export default function ModalTurno(props) {
   const handleOpenModal = (props) => {
     setModalIsOpen(true);
     setMensajeModal(props);
-    console.log(mensajeModal);
   };
 
   const almacenar = async () => {
@@ -113,7 +109,6 @@ export default function ModalTurno(props) {
       "https://proyecto-rolling.herokuapp.com/api/turnos",
       newTurno
     );
-    console.log(newTurno);
     history.push("/exito/turnos");
   };
 

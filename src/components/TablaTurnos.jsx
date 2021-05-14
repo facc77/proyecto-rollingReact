@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import Spinner from "./Spinner";
+import SpinnerSinTurnos from "./SpinnerSinTurnos";
 
 export default function TablaTurnos(props) {
   const [turnosConfirmados, setTurnosConfirmados] = useState([]);
@@ -51,7 +51,7 @@ export default function TablaTurnos(props) {
         <tbody>
           <tr key={Math.random()}>
             <td>
-              <Spinner />
+              <SpinnerSinTurnos />
             </td>
           </tr>
         </tbody>

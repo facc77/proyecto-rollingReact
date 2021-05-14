@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import Modal from "react-modal";
-import Spinner from "./Spinner";
+import SpinnerSinTurnos from "./SpinnerSinTurnos";
 
 export default function TablaTurnos({ usuarioLogueado }) {
   const [turnosConfirmados, setTurnosConfirmados] = useState([]);
@@ -55,13 +55,18 @@ export default function TablaTurnos({ usuarioLogueado }) {
         <tbody>
           {turnosConfirmados.length > 0 ? (
             turnosConfirmados.map((turno) => (
-              <tr key={turno._id} onDoubleClick={() => handleClick(turno._id)}>
+              <tr
+                title="clickear para ver detalles"
+                className="tableRow"
+                key={turno._id}
+                onClick={() => handleClick(turno._id)}
+              >
                 <td>{turno.hora}</td>
                 <td>{turno.fecha}</td>
               </tr>
             ))
           ) : (
-            <Spinner />
+            <SpinnerSinTurnos />
           )}
         </tbody>
       </table>

@@ -45,6 +45,10 @@
   color: white;
 }
 
+.tableRow {
+  cursor: pointer;
+}
+
 @media (max-width: 420px) {
   .tablaAdmin {
     overflow-y: auto;

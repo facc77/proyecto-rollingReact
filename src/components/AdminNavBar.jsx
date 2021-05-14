@@ -62,7 +62,6 @@ export default function AdminNavBar() {
               <NavDropdown.Item
                 onClick={() => {
                   logOut();
-                  console.log("hola");
                 }}
               >
                 Cerrar sesion

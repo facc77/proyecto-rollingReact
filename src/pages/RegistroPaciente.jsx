@@ -138,10 +138,7 @@ export default function RegistroPaciente() {
         handleSuccess1("usuario");
         return null;
       });
-      console.log(userExist);
-
       if (userExist === 1) {
-        console.log("usuario existe");
         return null;
       } else {
         return true;
