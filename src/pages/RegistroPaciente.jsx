@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import "../css/registroPaciente.css";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { CircularProgress } from "@material-ui/core";
 
 export default function RegistroPaciente() {
+  const [loadingButton, setLoadingButton] = useState("0");
   const [state, setState] = useState({
     form: {
       usuario: "",
@@ -13,6 +15,12 @@ export default function RegistroPaciente() {
       contrasena2: "",
     },
   });
+
+  const style = {
+    height: 20,
+    width: 20,
+    color: "white",
+  };
 
   const [usuarios, setUsuarios] = useState({});
 
@@ -112,6 +120,8 @@ export default function RegistroPaciente() {
   };
 
   const almacenar = async (e) => {
+    setLoadingButton("1");
+
     const newPaciente = {
       usuario: state.form.usuario,
       email: state.form.email,
@@ -204,7 +214,13 @@ export default function RegistroPaciente() {
             <small className="mensajeError">{mensajeError4}</small>
           </div>
 
-          <button className="btn btn-info ">Enviar</button>
+          <button className="btn btn-info ">
+            {loadingButton === "1" ? (
+              <CircularProgress style={style} />
+            ) : (
+              "Enviar"
+            )}
+          </button>
         </form>
       </div>
     </div>

@@ -5,6 +5,7 @@ import Logo from "../img/logo.jpg";
 import { Link, useHistory } from "react-router-dom";
 import Modal from "react-modal";
 import Spinner from "../components/Spinner";
+import { CircularProgress } from "@material-ui/core";
 
 export default function LoginUsuario() {
   const [usuarios, setUsuario] = useState({});
@@ -16,6 +17,7 @@ export default function LoginUsuario() {
   });
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [mensajeModal, setMensajeModal] = useState("");
+  const [loadingButton, setLoadingButton] = useState("0");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,14 +39,22 @@ export default function LoginUsuario() {
       },
     });
   };
+  const style = {
+    height: 20,
+    width: 20,
+    color: "white",
+  };
 
   let history = useHistory();
 
   const verificarLogin = async () => {
+
     if (
       ("admin" === datoIngresado.datos.usuario) &
       ("admin" === datoIngresado.datos.contrasena)
     ) {
+          setLoadingButton("1");
+
       const newUsuarioLog = {
         usuario: "admin",
       };
@@ -52,7 +62,6 @@ export default function LoginUsuario() {
         "https://proyecto-rolling.herokuapp.com/api/usuarioLog/609849ab45e6160015b2c27e",
         newUsuarioLog
       );
-      history.push("/adminPaciente");
       history.push("/adminMedico");
     }
     const busquedaUsuario = usuarios.usuarios.find(function (user) {
@@ -67,6 +76,7 @@ export default function LoginUsuario() {
 
     if (busquedaUsuario) {
       if (busquedaUsuario.permiso === "aceptado") {
+            setLoadingButton("1");
         const newUsuarioLog = {
           usuario: busquedaUsuario.usuario,
         };
@@ -86,6 +96,7 @@ export default function LoginUsuario() {
   };
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
     if (usuarios === {}) {
       let aviso = "demoras en el servidor, vuelva a intentar";
@@ -134,14 +145,21 @@ export default function LoginUsuario() {
                 <Link className="linkRegister" to="/registroMedico">
                   No estas registrado?
                 </Link>
-                <button className="btn btn-info loginButton">Enviar</button>
+                <button className="btn btn-info loginButton">
+                  { loadingButton === "0" ? (
+                    "Enviar"
+                  ) : (
+                    <CircularProgress style={style} />
+                  )}
+                </button>
               </form>
             </div>
           </div>
           <Modal
             isOpen={modalIsOpen}
             ariaHideApp={false}
-            onRequestClose={() => setModalIsOpen(false)}
+            onRequestClose={() =>     setModalIsOpen(false)
+}
             mensajeModal={mensajeModal}
             className="modalLogin-content-Medico"
           >

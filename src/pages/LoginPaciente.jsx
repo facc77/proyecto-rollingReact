@@ -5,8 +5,11 @@ import Logo from "../img/logo.jpg";
 import Modal from "react-modal";
 import { Link, useHistory } from "react-router-dom";
 import Spinner from "../components/Spinner";
+import { CircularProgress } from "@material-ui/core";
 
 export default function LoginPaciente() {
+  const [loadingButton, setLoadingButton] = useState("0");
+
   const [usuarios, setUsuario] = useState({});
   const [datoIngresado, setDatosIngresado] = useState({
     datos: {
@@ -28,6 +31,11 @@ export default function LoginPaciente() {
     };
     fetchData();
   }, []);
+  const style = {
+    height: 20,
+    width: 20,
+    color: "white",
+  };
 
   const handleChange = (e) => {
     setDatosIngresado({
@@ -45,6 +53,7 @@ export default function LoginPaciente() {
       ("admin" === datoIngresado.datos.usuario) &
       ("admin" === datoIngresado.datos.contrasena)
     ) {
+      setLoadingButton("1")
       const newUsuarioLog = {
         usuario: "admin",
       };
@@ -66,6 +75,7 @@ export default function LoginPaciente() {
 
     if (busquedaUsuario) {
       if (busquedaUsuario.permiso === "aceptado") {
+        setLoadingButton("1")
         const newUsuarioLog = {
           usuario: busquedaUsuario.usuario,
         };
@@ -77,7 +87,6 @@ export default function LoginPaciente() {
       } else {
         let aviso = "tienes que aguardar a la verificacion de la cuenta";
         handleOpenModal(aviso);
-        //mostrarModal(aviso);
       }
     } else {
       let aviso = "las credenciales enviadas no son correctas";
@@ -136,7 +145,13 @@ export default function LoginPaciente() {
                 <Link className="linkRegister" to="/registroPaciente">
                   No estas registrado?
                 </Link>
-                <button className="btn btn-info loginButton">Enviar</button>
+                <button className="btn btn-info loginButton">
+                  {loadingButton === "1" ? (
+                    <CircularProgress style={style} />
+                  ) : (
+                    "Enviar"
+                  )}
+                </button>
               </form>
             </div>
           </div>

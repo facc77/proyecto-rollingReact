@@ -41,7 +41,7 @@ export default function SpinnerSinTurnos() {
       {mensaje === 0 ? (
         <CircularProgress color="inherit" />
       ) : (
-        <p>no se encontraron turnos, se retornara a inicio</p>
+        <p>no se encontraron resultados, se retornara a inicio</p>
       )}
     </Backdrop>
   );

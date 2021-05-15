@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import NavBar from "../components/NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Jumbotron from "react-bootstrap/Jumbotron";
@@ -8,10 +8,6 @@ import Retrato from "../img/retratoMedico.jpg";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  useEffect(() => {
-    localStorage.setItem("usuarioLogueado", JSON.stringify(""));
-  });
-
   return (
     <div className="homePage">
       <NavBar />

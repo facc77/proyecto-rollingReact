@@ -4,6 +4,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import Modal from "react-modal";
+import { CircularProgress } from "@material-ui/core";
+
 
 export default function ModalTurno(props) {
   const [turnosAlmacenados, setTurnosAlmacenados] = useState({});
@@ -13,6 +15,8 @@ export default function ModalTurno(props) {
     date.getMonth(date) + 1
   }-${date.getFullYear(date)}`;
   const [fechaElegida, setFechaElegida] = useState(fechaActual);
+    const [loadingButton, setLoadingButton] = useState("0");
+
 
   const [state, setState] = useState({
     form: {
@@ -37,6 +41,12 @@ export default function ModalTurno(props) {
     };
     fetchData();
   });
+
+    const style = {
+    height: 12,
+    width: 12,
+    color: "white",
+  };
 
   const manana = [
     { hora: "9", id: 1 },
@@ -96,6 +106,8 @@ export default function ModalTurno(props) {
   };
 
   const almacenar = async () => {
+              setLoadingButton("1");
+
     const newTurno = {
       paciente: state.form.paciente,
       fecha: fechaElegida,
@@ -109,7 +121,7 @@ export default function ModalTurno(props) {
       "https://proyecto-rolling.herokuapp.com/api/turnos",
       newTurno
     );
-    history.push("/exito/turnos");
+    history.push("/exito/turnos"); 
   };
 
   return (
@@ -157,7 +169,11 @@ export default function ModalTurno(props) {
               id="botonReservar"
               onClick={handleSubmit}
             >
-              Reservar Turno
+                  { loadingButton === "0" ? (
+                    "Reservar Turno"
+                  ) : (
+                    <CircularProgress style={style} />
+                  )}
             </button>
           </div>
           <div className="share-wrap">
