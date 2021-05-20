@@ -31,6 +31,7 @@ export default function LoginPaciente() {
     };
     fetchData();
   }, []);
+
   const style = {
     height: 20,
     width: 20,
@@ -53,7 +54,7 @@ export default function LoginPaciente() {
       ("admin" === datoIngresado.datos.usuario) &
       ("admin" === datoIngresado.datos.contrasena)
     ) {
-      setLoadingButton("1")
+      setLoadingButton("1");
       const newUsuarioLog = {
         usuario: "admin",
       };
@@ -75,7 +76,7 @@ export default function LoginPaciente() {
 
     if (busquedaUsuario) {
       if (busquedaUsuario.permiso === "aceptado") {
-        setLoadingButton("1")
+        setLoadingButton("1");
         const newUsuarioLog = {
           usuario: busquedaUsuario.usuario,
         };
@@ -113,7 +114,7 @@ export default function LoginPaciente() {
 
   return (
     <>
-      {usuarios !== {} ? (
+      {usuarios.length !== 0 ? (
         <>
           <div className="fondoPantalla">
             <div className="container2">

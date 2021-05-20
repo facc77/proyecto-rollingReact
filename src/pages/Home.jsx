@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import axios from "axios";
 import NavBar from "../components/NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Jumbotron from "react-bootstrap/Jumbotron";
@@ -8,6 +9,19 @@ import Retrato from "../img/retratoMedico.jpg";
 import { Link } from "react-router-dom";
 
 export default function Home() {
+  useEffect(() => {
+    async function fetchData() {
+      const newUsuarioLog = {
+        usuario: "noSession",
+      };
+      await axios.put(
+        "https://proyecto-rolling.herokuapp.com/api/usuarioLog/609849ab45e6160015b2c27e",
+        newUsuarioLog
+      );
+    }
+    fetchData();
+  }, []);
+
   return (
     <div className="homePage">
       <NavBar />
