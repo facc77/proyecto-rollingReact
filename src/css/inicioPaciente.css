@@ -199,6 +199,12 @@ a:hover {
   color: white;
 }
 
+.mensajeSinTurnos {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #4caf50;
+}
+
 @media (min-height: 1000px) {
   #table1 {
     top: 200px;

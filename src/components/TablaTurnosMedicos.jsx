@@ -1,14 +1,17 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import Modal from "react-modal";
-import SpinnerSinTurnos from "./SpinnerSinTurnos";
+import Alert from "react-bootstrap/Alert";
+import Spinner from "./Spinner";
 
 export default function TablaTurnos({ usuarioLogueado }) {
   const [turnosConfirmados, setTurnosConfirmados] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [mensajeModal, setMensajeModal] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const fetchData = useCallback(async () => {
+    setLoading(true);
     axios
       .get(`https://proyecto-rolling.herokuapp.com/api/turnos`)
       .then((res) => {
@@ -23,6 +26,9 @@ export default function TablaTurnos({ usuarioLogueado }) {
       .catch((err) => {
         alert(err);
       });
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
   }, [usuarioLogueado]);
 
   useEffect(() => {
@@ -44,17 +50,16 @@ export default function TablaTurnos({ usuarioLogueado }) {
 
   return (
     <>
-      {" "}
-      <table>
-        <thead>
-          <tr>
-            <th>hora</th>
-            <th>fecha</th>
-          </tr>
-        </thead>
-        <tbody>
-          {turnosConfirmados.length > 0 ? (
-            turnosConfirmados.map((turno) => (
+      {turnosConfirmados.length > 0 && !loading ? (
+        <table>
+          <thead>
+            <tr>
+              <th>hora</th>
+              <th>fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            {turnosConfirmados.map((turno) => (
               <tr
                 title="clickear para ver detalles"
                 className="tableRow"
@@ -64,12 +69,15 @@ export default function TablaTurnos({ usuarioLogueado }) {
                 <td>{turno.hora}</td>
                 <td>{turno.fecha}</td>
               </tr>
-            ))
-          ) : (
-            <SpinnerSinTurnos />
-          )}
-        </tbody>
-      </table>
+            ))}
+          </tbody>
+        </table>
+      ) : null}
+
+      {turnosConfirmados.length === 0 && !loading ? (
+        <Alert variant="info">No se encontraron turnos reservados!</Alert>
+      ) : null}
+
       <Modal
         isOpen={modalIsOpen}
         ariaHideApp={false}
@@ -86,6 +94,7 @@ export default function TablaTurnos({ usuarioLogueado }) {
           Cerrar
         </button>
       </Modal>
+      {loading ? <Spinner /> : null}
     </>
   );
 }
